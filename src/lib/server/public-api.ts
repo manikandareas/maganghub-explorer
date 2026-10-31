@@ -31,7 +31,11 @@ export function publicFacets(facets: Facets) {
 
 export function parsePublicSearch(params: URLSearchParams, facets: Facets): { filters: Filters; mode: SearchMode; limit: number } {
   const invalid = (name: string): never => { throw new ServiceError("INVALID_PARAMETER", `Parameter ${name} tidak valid. Lihat /api-docs.`, 400); };
-  for (const key of params.keys()) if (!PUBLIC_PARAMETERS.some(item => item.name === key) || params.getAll(key).length !== 1) invalid(key);
+  for (const key of params.keys()) {
+    // Extra parameters added by AI clients and shared links never participate in search.
+    if (!PUBLIC_PARAMETERS.some(item => item.name === key)) continue;
+    if (params.getAll(key).length !== 1) invalid(key);
+  }
   for (const rule of PUBLIC_PARAMETERS) {
     const value = params.get(rule.name);
     if (value !== null && "values" in rule && !(rule.values as readonly string[]).includes(value)) invalid(rule.name);

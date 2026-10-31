@@ -31,6 +31,14 @@ async function main() {
   const result = await (await get("/api/v1/jobs?q=ai%20engineer&mode=keyword&limit=4")).json();
   assert.ok(result.jobs.every((job: { title: string }) => job.title.toLowerCase() === "ai engineer"));
   assert.ok(result.jobs.every((job: Record<string, unknown>) => "opportunityScore" in job && !("score" in job) && "sourceUrl" in job));
+  const tagged = await (await get("/api/v1/jobs?q=ai%20engineer&mode=keyword&limit=4&utm_source=chatgpt.com&utm_medium=referral&utm_source=claude&future_ai_parameter=example&future_ai_parameter=another")).json();
+  assert.deepEqual(tagged, result, "Unknown parameters must not change search results or metadata");
+  const taggedCatalog = await (await get("/api/v1/jobs?utm_source=chatgpt.com&ref=claude&future_ai_parameter=example")).json();
+  assert.equal(taggedCatalog.total, facets.total);
+  const taggedInvalid = await (await get("/api/v1/jobs?limit=51&utm_source=chatgpt.com", 400)).json();
+  assert.equal(taggedInvalid.error.code, "INVALID_PARAMETER");
+  const duplicate = await (await get("/api/v1/jobs?q=ai&q=engineer&future_ai_parameter=example", 400)).json();
+  assert.equal(duplicate.error.code, "INVALID_PARAMETER");
   const hybridPath = "/api/v1/jobs?q=mengolah%20angka%20dan%20membuat%20dashboard&limit=5";
   const hybrid = await (await get(hybridPath)).json();
   assert.equal(hybrid.meta.mode, "hybrid");

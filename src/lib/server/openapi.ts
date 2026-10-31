@@ -20,7 +20,7 @@ export function openApiDocument() {
   const option = { type: "object", required: ["value", "label"], properties: { value: { type: "string" }, label: { type: "string" }, count: { type: "integer" }, province: { type: "string" } } };
   const json = (schema: object) => ({ "application/json": { schema } });
   return {
-    openapi: "3.1.0", info: { title: "MagangHub Explorer API", version: "1.0.0", description: "API publik snapshot lowongan 31 Oktober 2026. Bukan API resmi Kemnaker atau data live. Online interview tidak berarti kerja remote. Informasi yang tidak tersedia tidak boleh dikarang." },
+    openapi: "3.1.0", info: { title: "MagangHub Explorer API", version: "1.0.0", description: "API publik snapshot lowongan 31 Oktober 2026. Bukan API resmi Kemnaker atau data live. Online interview tidak berarti kerja remote. Informasi yang tidak tersedia tidak boleh dikarang. Parameter tambahan yang tidak dikenal diabaikan, termasuk yang berulang; parameter pencarian resmi tetap divalidasi." },
     servers: [{ url: siteUrl() }], security: [],
     paths: {
       "/api/v1/jobs": { get: { operationId: "searchJobs", summary: "Cari lowongan magang", description: "Default hybrid. Filter selalu wajib dipenuhi. total menghitung seluruh hasil keyword ditambah maksimal 200 kandidat semantic yang melewati threshold, bukan seluruh kemungkinan kecocokan semantic. Query kosong memakai urutan portal. Provider gagal menghasilkan mode keyword dan fallbackReason. Maksimal 60 request/menit/client; pembuatan embedding baru dibatasi terpisah.",

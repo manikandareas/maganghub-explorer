@@ -18,6 +18,8 @@ Data snapshot: 2026-10-31. This is not the official Kemnaker website or live vac
 ## Usage
 Use q for role, skills, or interests. Use explicit filters for location and eligibility; natural-language text is not a guaranteed filter parser. q is limited to 250 characters, limit to 50 (default 12). Follow page/pages for pagination. In hybrid mode total counts keyword matches plus up to 200 qualified semantic candidates, not every possible semantic match. Results must satisfy all supplied filters. Check meta.mode and meta.fallbackReason: provider outages may return keyword results. Observe HTTP 429 and Retry-After. Rank scores are not acceptance probabilities. Cite sourceUrl and the snapshot date. Fetch detail before stating requirements.
 
+Unknown query parameters, including tracking parameters added by AI platforms, are ignored and do not act as filters. Use the documented parameter names. Invalid or repeated documented search parameters return HTTP 400.
+
 Categories cover 22 fields including healthcare, finance, law, education, HR, agriculture, logistics, and engineering. Read valid category values from facets. Categories are inferred from position titles, not official employer classifications; unrecognized titles use category=lain. Check detail before assuming field or eligibility. meta.categoryVersion identifies the taxonomy version.
 
 ## Sources

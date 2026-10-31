@@ -73,6 +73,8 @@ Untuk memperbarui kategori pada snapshot yang sudah diimpor, jalankan `npm run d
 
 Contoh: `/api/v1/jobs?q=mengolah%20data&education=sarjana&mode=hybrid&limit=12`. API tanpa login dan mendukung CORS GET/OPTIONS. Parameter salah menghasilkan 400, detail hilang 404, rate limit 429 dengan `Retry-After`, dan katalog/database tidak tersedia 503.
 
+Parameter tambahan yang tidak dikenal diabaikan, termasuk `utm_*`, `ref`, serta parameter lain yang ditambahkan platform AI atau tautan berbagi. Nilai tambahan boleh berulang dan tidak mengubah filter, ranking, atau pagination. Parameter pencarian resmi yang tidak valid atau berulang tetap menghasilkan 400.
+
 `meta` selalu menyatakan tanggal snapshot, sumber, `isLive=false`, dan mode yang benar-benar digunakan. Jika provider gagal, mode keyword beserta `fallbackReason` dikembalikan. Query kosong atau hanya tanda baca tidak membuat embedding. Deskripsi yang tidak tersedia adalah `null` pada detail API. Skor peluang dipisahkan sebagai `opportunityScore`; skor relevansi bukan probabilitas.
 
 Dalam mode hybrid, `total` menghitung union seluruh kecocokan keyword dan maksimal 200 kandidat semantic yang melewati threshold. Semua filter diterapkan sebelum retrieval. Sort dan pagination diterapkan setelah deduplikasi, dengan tie-break stabil. `totalScope` menjelaskan bahwa ini bukan hitungan seluruh kemungkinan kecocokan semantic.

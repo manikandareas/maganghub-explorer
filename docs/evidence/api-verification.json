@@ -1,122 +1,142 @@
 {
   "origin": "http://localhost:3000",
   "scope": "Local HTTP verification, not a deployed production test",
-  "passed": 23,
+  "passed": 27,
   "checks": [
     {
       "name": "/api/v1/facets",
       "status": 200,
-      "elapsedMs": 665
+      "elapsedMs": 1496
     },
     {
       "name": "/api/v1/jobs?category=kesehatan&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 316
+      "elapsedMs": 384
     },
     {
       "name": "/api/v1/jobs?category=keuangan&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 205
+      "elapsedMs": 260
     },
     {
       "name": "/api/v1/jobs?category=hukum&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 229
+      "elapsedMs": 207
     },
     {
       "name": "/api/v1/jobs?category=pendidikan&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 166
+      "elapsedMs": 233
     },
     {
       "name": "/api/v1/jobs?category=pertanian&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 226
+      "elapsedMs": 220
     },
     {
       "name": "/api/v1/jobs?category=sdm&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 305
+      "elapsedMs": 422
     },
     {
       "name": "/api/v1/jobs?q=ai%20engineer&mode=keyword&limit=4",
       "status": 200,
-      "elapsedMs": 200
+      "elapsedMs": 199
     },
     {
-      "name": "/api/v1/jobs?q=mengolah%20angka%20dan%20membuat%20dashboard&limit=5",
+      "name": "/api/v1/jobs?q=ai%20engineer&mode=keyword&limit=4&utm_source=chatgpt.com&utm_medium=referral&utm_source=claude&future_ai_parameter=example&future_ai_parameter=another",
       "status": 200,
-      "elapsedMs": 400
+      "elapsedMs": 154
     },
     {
-      "name": "/api/v1/jobs?q=mengolah%20angka%20dan%20membuat%20dashboard&limit=5",
+      "name": "/api/v1/jobs?utm_source=chatgpt.com&ref=claude&future_ai_parameter=example",
       "status": 200,
+      "elapsedMs": 220
+    },
+    {
+      "name": "/api/v1/jobs?limit=51&utm_source=chatgpt.com",
+      "status": 400,
+      "elapsedMs": 197
+    },
+    {
+      "name": "/api/v1/jobs?q=ai&q=engineer&future_ai_parameter=example",
+      "status": 400,
       "elapsedMs": 349
+    },
+    {
+      "name": "/api/v1/jobs?q=mengolah%20angka%20dan%20membuat%20dashboard&limit=5",
+      "status": 200,
+      "elapsedMs": 511
+    },
+    {
+      "name": "/api/v1/jobs?q=mengolah%20angka%20dan%20membuat%20dashboard&limit=5",
+      "status": 200,
+      "elapsedMs": 465
     },
     {
       "name": "/api/v1/jobs?q=mengolah%20angka%20dan%20membuat%20dashboard&limit=5&page=2",
       "status": 200,
-      "elapsedMs": 313
+      "elapsedMs": 384
     },
     {
       "name": "/api/v1/jobs?city=sulawesi-selatan%2Fkota-makassar&mode=keyword",
       "status": 200,
-      "elapsedMs": 270
+      "elapsedMs": 153
     },
     {
       "name": "/api/v1/jobs/01a1584e-b794-7030-aa7e-2f890cbfc293",
       "status": 200,
-      "elapsedMs": 550
+      "elapsedMs": 1313
     },
     {
       "name": "/api/v1/jobs/01a13d7a-830f-71ab-892b-8c2ca5345a88",
       "status": 200,
-      "elapsedMs": 221
+      "elapsedMs": 361
     },
     {
       "name": "/api/v1/jobs/00000000-0000-0000-0000-000000000000",
       "status": 404,
-      "elapsedMs": 221
+      "elapsedMs": 248
     },
     {
       "name": "/api/v1/jobs?limit=51",
       "status": 400,
-      "elapsedMs": 120
+      "elapsedMs": 202
     },
     {
       "name": "/api/v1/jobs",
       "status": 204,
-      "elapsedMs": 72
+      "elapsedMs": 20
     },
     {
       "name": "/openapi.json",
       "status": 200,
-      "elapsedMs": 49
+      "elapsedMs": 295
     },
     {
       "name": "/llms.txt",
       "status": 200,
-      "elapsedMs": 31
+      "elapsedMs": 123
     },
     {
       "name": "/llm.txt",
       "status": 308,
-      "elapsedMs": 25
+      "elapsedMs": 105
     },
     {
       "name": "/sitemap.xml",
       "status": 200,
-      "elapsedMs": 1032
+      "elapsedMs": 1130
     },
     {
       "name": "/robots.txt",
       "status": 200,
-      "elapsedMs": 45
+      "elapsedMs": 175
     },
     {
       "name": "/api/jobs?q=ai%20engineer",
       "status": 200,
-      "elapsedMs": 567
+      "elapsedMs": 392
     }
   ]
 }
