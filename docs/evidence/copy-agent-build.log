@@ -1,0 +1,40 @@
+
+> maganghub-explorer@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+- Environments: .env
+✓ Running next.config.ts took 228ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1429ms
+  Running TypeScript ...
+  Finished TypeScript in 1534ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 211ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /api-docs
+├ ƒ /api/jobs
+├ ƒ /api/v1/facets
+├ ƒ /api/v1/jobs
+├ ƒ /api/v1/jobs/[id]
+├ ○ /icon.svg
+├ ƒ /llm.txt
+├ ○ /llms.txt
+├ ƒ /lowongan/[id]
+├ ƒ /openapi.json
+├ ○ /robots.txt
+└ ƒ /sitemap.xml
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

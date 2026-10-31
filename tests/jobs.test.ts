@@ -7,6 +7,7 @@ import { DEFAULT_FILTERS, filterParams, parseFilters, type Filters } from "../sr
 
 // Keep legacy comparison for structured filters and explicit sort modes only.
 // Search relevance is specified by the regression tests below.
+// The original IT-only taxonomy is replaced; job-categories.test.ts covers the new fields.
 const context = vm.createContext({ window: {}, document: { getElementById: () => ({ addEventListener() {} }) } });
 for (let part = 1; part <= 4; part++) vm.runInContext(readFileSync(`data-${part}.js`, "utf8"), context);
 const original = readFileSync("app.js", "utf8");
@@ -19,12 +20,11 @@ globalThis.reference = (input) => {
 };`, context);
 
 const cases: Partial<Filters>[] = [
-  {}, { cat: "ai" }, { cat: "data" }, { cat: "dev" },
-  { cat: "it" }, { cat: "lain" }, { prov: "1" }, { city: "0" },
+  {}, { prov: "1" }, { city: "0" },
   { org: "0" }, { org: "1" }, { edu: "1" }, { edu: "2" }, { edu: "4" },
   { interview: "1" }, { interview: "2" }, { disability: true }, { minQuota: "20" },
   { sort: "score" }, { sort: "quota" }, { sort: "appl" }, { sort: "az" },
-  { cat: "dev", edu: "2", interview: "1", disability: true, minQuota: "2", sort: "quota" },
+  { edu: "2", interview: "1", disability: true, minQuota: "2", sort: "quota" },
   { prov: "1", city: "1", org: "0", edu: "2" },
   { q: "tidak-ada-lowongan-xyz987" },
 ];

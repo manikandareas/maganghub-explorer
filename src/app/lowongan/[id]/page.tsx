@@ -9,19 +9,19 @@ import { SiteFooter } from "@/components/site-footer";
 import { SaveButton } from "@/components/save-button";
 import { ShareButton } from "@/components/share-button";
 import { BackToResults } from "@/components/back-to-results";
-import { getJob } from "@/lib/jobs";
+import { pageJob } from "@/lib/server/page-data";
 import { formatNumber } from "@/lib/job-types";
 
 type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const job = getJob((await params).id);
+  const job = await pageJob((await params).id);
   if (!job) notFound();
-  return { title: `${job.title} — ${job.organization}`, description: `Lowongan magang ${job.title} di ${job.organization}, ${job.city}. Kuota ${job.quota} peserta. Snapshot 31 Oktober 2026.` };
+  return { title: `${job.title} — ${job.organization}`, description: `Lowongan magang ${job.title} di ${job.organization}, ${job.city}. Kuota ${job.quota} peserta. Snapshot 31 Oktober 2026.`, alternates: { canonical: `/lowongan/${job.id}` } };
 }
 
 export default async function JobPage({ params }: Props) {
-  const job = getJob((await params).id);
+  const job = await pageJob((await params).id);
   if (!job) notFound();
   const facts = [
     ["Kuota peserta", `${formatNumber(job.quota)} orang`],

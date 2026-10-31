@@ -33,7 +33,7 @@ export function SearchableSelect({ label, placeholder, options, value, onChange 
             <CommandGroup><CommandItem value={`semua ${label}`} onSelect={() => { onChange(""); setOpen(false); }}>
               <CheckIcon className={cn("size-4", value !== "" && "opacity-0")} />{placeholder}
             </CommandItem>
-              {options.map(option => <CommandItem key={option.value} value={`${option.label} ${option.value}`} onSelect={() => { onChange(option.value); setOpen(false); }}>
+              {options.map(option => <CommandItem key={option.value} value={`${option.label} ${option.value} ${(option.keywords ?? []).join(" ")}`} onSelect={() => { onChange(option.value); setOpen(false); }}>
                 <CheckIcon className={cn("size-4 shrink-0", option.value !== value && "opacity-0")} />
                 <span>{option.label}</span>
               </CommandItem>)}
@@ -67,7 +67,8 @@ export function JobFilters({ filters, facets, onChange, onReset }: {
   return <div className="filter-panel">
     <div className="filter-panel-heading"><h2><MixerHorizontalIcon />Filter</h2>{hasFilters ? <Button variant="ghost" size="sm" onClick={onReset} className="reset-button">Reset</Button> : null}</div>
     <div className="filter-section space-y-4">
-      <FilterSelect label="Bidang" placeholder="Semua bidang" value={filters.cat} options={facets.categories} onChange={cat => onChange({ cat })} />
+      <SearchableSelect label="Bidang" placeholder="Semua bidang" value={filters.cat} options={facets.categories} onChange={cat => onChange({ cat })} />
+      <p className="-mt-2 text-xs text-muted-foreground">Bidang diperkirakan dari judul posisi.</p>
       <SearchableSelect label="Provinsi" placeholder="Semua provinsi" value={filters.prov} options={facets.provinces} onChange={prov => onChange({ prov, city: "" })} />
       <SearchableSelect label="Kota / kabupaten" placeholder="Semua kota / kabupaten" value={filters.city} options={cities} onChange={city => onChange({ city })} />
       <FilterSelect label="Jenjang pendidikan" placeholder="Semua jenjang" value={filters.edu} options={[{ value: "1", label: "Diploma" }, { value: "2", label: "Sarjana" }, { value: "4", label: "Profesi" }]} onChange={edu => onChange({ edu })} />

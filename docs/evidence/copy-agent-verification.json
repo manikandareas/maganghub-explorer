@@ -1,0 +1,56 @@
+{
+  "scope": "Local browser verification on localhost:3000",
+  "button": {
+    "position": "left, below hero title and description, above search",
+    "component": "shadcn Avatar",
+    "icons": [
+      "ChatGPT",
+      "Claude",
+      "Gemini"
+    ],
+    "overlapPx": 9,
+    "round": true,
+    "label": "Copy for agent",
+    "labelChangesOnCopy": false,
+    "copyFeedback": "copy icon becomes check, resets after 2500ms"
+  },
+  "clipboard": {
+    "realWritePassed": true,
+    "guideUrl": true,
+    "openApiUrl": true,
+    "questionPlaceholder": true,
+    "origin": "current browser origin",
+    "copiedPromptCharacters": 1325
+  },
+  "manualFallback": {
+    "permissionDenialSimulated": true,
+    "shown": true,
+    "promptSelected": true,
+    "focusRestoredAfterEscape": true
+  },
+  "responsive": [
+    {
+      "viewport": 1440,
+      "gapAbovePx": 16,
+      "gapBeforeSearchPx": 24,
+      "leftAligned": true,
+      "overflow": false
+    },
+    {
+      "viewport": 390,
+      "gapAbovePx": 16,
+      "gapBeforeSearchPx": 18,
+      "leftAligned": true,
+      "overflow": false
+    }
+  ],
+  "typecheck": "passed",
+  "lint": "passed",
+  "productionBuild": "passed",
+  "images": [
+    "copy-agent-desktop.png",
+    "copy-agent-mobile.png",
+    "copy-agent-copied.png",
+    "copy-agent-fallback.png"
+  ]
+}

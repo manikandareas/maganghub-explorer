@@ -1,0 +1,2265 @@
+{
+  "scope": "Small labelled candidate subset; not full-catalog acceptance",
+  "reports": [
+    {
+      "dimensions": 512,
+      "documents": 80,
+      "tokens": 14429,
+      "elapsedMs": 3149,
+      "evaluationHits": 19,
+      "evaluationTotal": 20,
+      "results": [
+        {
+          "query": "AI Engineer",
+          "title": "ai engineer|machine learning|artificial intelligence|data scientist|computer vision|nlp",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.558456061691686
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.5036566947492247
+            },
+            {
+              "title": "Programmer Artificial Intelligence (AI)",
+              "similarity": 0.44265118530165637
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.41857869445038887
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.39719959788999404
+            }
+          ]
+        },
+        {
+          "query": "membangun model kecerdasan buatan dan machine learning",
+          "title": "ai engineer|machine learning|artificial intelligence|data scientist|computer vision|nlp",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "AI & Machine Learning Foundations",
+              "similarity": 0.4798988732025009
+            },
+            {
+              "title": "Programmer Artificial Intelligence (AI)",
+              "similarity": 0.46493158056728134
+            },
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.3865726741162234
+            },
+            {
+              "title": "Agronomis / Penyuluh pertanian",
+              "similarity": 0.36030140700131597
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.3498459869151702
+            }
+          ]
+        },
+        {
+          "query": "Data Analyst",
+          "title": "data analyst|analis data|data analis|business intelligence|data science",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5879291749461117
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5830134258558246
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.49721017196679895
+            },
+            {
+              "title": "Programmer Artificial Intelligence (AI)",
+              "similarity": 0.42371340075533226
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.42038384867737477
+            }
+          ]
+        },
+        {
+          "query": "mengolah angka dan membuat dashboard analisis data",
+          "title": "data analyst|analis data|data analis|business intelligence|data science",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5288156964788868
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5042045754116771
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.4445216584554146
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.42029424152497086
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.408213184522765
+            }
+          ]
+        },
+        {
+          "query": "Backend Developer",
+          "title": "backend|back.end|software|programmer|developer",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.4395462081574806
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.40597724545546043
+            },
+            {
+              "title": "BRILiaN Internship Assistant Software Developer",
+              "similarity": 0.3929780937251053
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.38725285175860336
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.36748607368463126
+            }
+          ]
+        },
+        {
+          "query": "building backend services and application APIs",
+          "title": "backend|back.end|software|programmer|developer",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Service Intern",
+              "similarity": 0.36876110864227485
+            },
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.32804629772090266
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.31355803829501383
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.30302463490806986
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.2964550937235799
+            }
+          ]
+        },
+        {
+          "query": "Frontend Developer",
+          "title": "frontend|front.end|web developer|software|programmer",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.4807914200009691
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.43272150640768814
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.42656126058511745
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.39947884434752723
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.39487876632301777
+            }
+          ]
+        },
+        {
+          "query": "membuat tampilan website dengan React dan JavaScript",
+          "title": "frontend|front.end|web developer|software|programmer",
+          "split": "evaluation",
+          "hitAt5": false,
+          "top5": [
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.4569004057930215
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.4501957527427294
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.410750680592173
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.40844637204190803
+            },
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.39186782175693224
+            }
+          ]
+        },
+        {
+          "query": "Quality Assurance",
+          "title": "quality assurance|tester|software test|qa engineer",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Quality Assurance",
+              "similarity": 0.535783031151368
+            },
+            {
+              "title": "Junior staff quality assurance",
+              "similarity": 0.4841246373825925
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.44553486136828724
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.3477961150520059
+            },
+            {
+              "title": "Warehouse Staff Program",
+              "similarity": 0.3176404515170361
+            }
+          ]
+        },
+        {
+          "query": "testing software applications and reporting bugs",
+          "title": "quality assurance|tester|software test|qa engineer",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Quality Assurance",
+              "similarity": 0.45735920576407807
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.44449974685721827
+            },
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.3555807004413509
+            },
+            {
+              "title": "BRILiaN Internship Assistant Software Developer",
+              "similarity": 0.32993118785907427
+            },
+            {
+              "title": "Junior staff quality assurance",
+              "similarity": 0.3270280355243358
+            }
+          ]
+        },
+        {
+          "query": "IT Support",
+          "title": "it support|technical support|helpdesk|jaringan|network",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT Support Internship",
+              "similarity": 0.5590407872296055
+            },
+            {
+              "title": "IT Support",
+              "similarity": 0.5214506632837583
+            },
+            {
+              "title": "IT Staff",
+              "similarity": 0.49055136731112725
+            },
+            {
+              "title": "Quality Assurance",
+              "similarity": 0.45097018393971666
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.42389944525803
+            }
+          ]
+        },
+        {
+          "query": "membantu pengguna memperbaiki komputer dan jaringan kantor",
+          "title": "it support|technical support|helpdesk|jaringan|network",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT Staff",
+              "similarity": 0.5029674280508516
+            },
+            {
+              "title": "Network Technician Junior",
+              "similarity": 0.494558950226633
+            },
+            {
+              "title": "IT Support Internship",
+              "similarity": 0.488793668239623
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.4856532686083028
+            },
+            {
+              "title": "IT Support",
+              "similarity": 0.4764438474785493
+            }
+          ]
+        },
+        {
+          "query": "Perawat",
+          "title": "perawat|keperawatan|nurse",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Perawat (D3 / Ners)",
+              "similarity": 0.6190902519078918
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.5998089065287786
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.5919525231238367
+            },
+            {
+              "title": "Bidan",
+              "similarity": 0.5174285886660073
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.44007783253346133
+            }
+          ]
+        },
+        {
+          "query": "mendampingi pasien dan membantu pelayanan keperawatan",
+          "title": "perawat|keperawatan|nurse",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Perawat",
+              "similarity": 0.629245844456932
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.5884333814656202
+            },
+            {
+              "title": "Perawat (D3 / Ners)",
+              "similarity": 0.546055278492986
+            },
+            {
+              "title": "IT Support",
+              "similarity": 0.5058397934344612
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.4689936869831399
+            }
+          ]
+        },
+        {
+          "query": "Akuntansi",
+          "title": "akuntan|account|keuangan|finance",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.6410525443475308
+            },
+            {
+              "title": "Staff Keuangan",
+              "similarity": 0.5810800570689025
+            },
+            {
+              "title": "Finance (Purchasing & Receiving) Intern",
+              "similarity": 0.5700391363607196
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.5208859588005907
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.4911220794747351
+            }
+          ]
+        },
+        {
+          "query": "mencatat transaksi dan menyusun laporan keuangan",
+          "title": "akuntan|account|keuangan|finance",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.5119154437018096
+            },
+            {
+              "title": "Finance (Purchasing & Receiving) Intern",
+              "similarity": 0.5040993916786647
+            },
+            {
+              "title": "Staff Keuangan",
+              "similarity": 0.4831178571594137
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.4617434919896368
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.4545746932635666
+            }
+          ]
+        },
+        {
+          "query": "Human Resources",
+          "title": "human resource|(^|[^a-z])hr([^a-z]|$)|sdm|personalia|rekrut|sumber daya manusia",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.520806961460039
+            },
+            {
+              "title": "HR, GA & DCC Intern",
+              "similarity": 0.5187003727432966
+            },
+            {
+              "title": "Human Resources & General Affairs Lucas",
+              "similarity": 0.4891426542676527
+            },
+            {
+              "title": "Staff HR & Organization Development",
+              "similarity": 0.4794289171654782
+            },
+            {
+              "title": "HR People Partner Project Support (Tbg)",
+              "similarity": 0.47776878310833126
+            }
+          ]
+        },
+        {
+          "query": "mengelola data karyawan dan proses rekrutmen pegawai",
+          "title": "human resource|(^|[^a-z])hr([^a-z]|$)|sdm|personalia|rekrut|sumber daya manusia",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.6091306858127155
+            },
+            {
+              "title": "Staff HR & Organization Development",
+              "similarity": 0.5298371164027458
+            },
+            {
+              "title": "Human Resources & General Affairs Lucas",
+              "similarity": 0.5041078076446865
+            },
+            {
+              "title": "HR, GA & DCC Intern",
+              "similarity": 0.4967556586179853
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.49674470394711534
+            }
+          ]
+        },
+        {
+          "query": "Digital Marketing",
+          "title": "marketing|pemasaran|digital campaign",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Digital Marketing Officer",
+              "similarity": 0.49713305450131884
+            },
+            {
+              "title": "CONTENT CREATOR & SOCIAL MEDIA SPECIALIST – RETAIL",
+              "similarity": 0.45027604885126493
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.44698080368800674
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.4095423155517892
+            },
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.4005940032934632
+            }
+          ]
+        },
+        {
+          "query": "promoting products through digital marketing campaigns",
+          "title": "marketing|pemasaran|digital campaign",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Digital Marketing Officer",
+              "similarity": 0.4240181788809423
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.38035416819843704
+            },
+            {
+              "title": "CONTENT CREATOR & SOCIAL MEDIA SPECIALIST – RETAIL",
+              "similarity": 0.3607607019921488
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.3585689232372715
+            },
+            {
+              "title": "MARKETING / PROMOTION",
+              "similarity": 0.3560025446868167
+            }
+          ]
+        },
+        {
+          "query": "Desain Grafis",
+          "title": "desain|design|graphic|kreatif",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.6026603265836457
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.592645032781661
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5715496868953096
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.5518725156733808
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.5362073626247366
+            }
+          ]
+        },
+        {
+          "query": "mendesain materi visual poster dan konten promosi",
+          "title": "desain|design|graphic|kreatif",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.5351655791404255
+            },
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.5329709119982908
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5321877067794958
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.5093260132171054
+            },
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.49147330477853757
+            }
+          ]
+        },
+        {
+          "query": "UI UX Designer",
+          "title": "ui.?ux|ux|ui designer|product design",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.6332603104556256
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5678106153605995
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.5165139211344467
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.4450771819701913
+            },
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.3960192065205774
+            }
+          ]
+        },
+        {
+          "query": "designing user interfaces and improving user experience",
+          "title": "ui.?ux|ux|ui designer|product design",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5781465020337464
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.5361942460472164
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.43235444986839866
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.3808110160612159
+            },
+            {
+              "title": "BRILiaN Internship Assistant Graphic Design",
+              "similarity": 0.369174307475987
+            }
+          ]
+        },
+        {
+          "query": "Legal",
+          "title": "legal|hukum|law",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Junior Legal Intern - BSI Kantor Pusat",
+              "similarity": 0.3094092895421454
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.2582003779439219
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.25575207336481753
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.25400243531078104
+            },
+            {
+              "title": "Internship Underwriting Energy, Marine & Aviation",
+              "similarity": 0.24955972075099453
+            }
+          ]
+        },
+        {
+          "query": "meninjau kontrak dan membantu urusan hukum perusahaan",
+          "title": "legal|hukum|law",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Junior Legal Intern - BSI Kantor Pusat",
+              "similarity": 0.5292627279461044
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.5096428251538327
+            },
+            {
+              "title": "Internship Underwriting Energy, Marine & Aviation",
+              "similarity": 0.5045097450110916
+            },
+            {
+              "title": "Service Intern",
+              "similarity": 0.4667006529061837
+            },
+            {
+              "title": "Site Operations (Penempatan Majalengka)",
+              "similarity": 0.46597646011287
+            }
+          ]
+        },
+        {
+          "query": "Logistik",
+          "title": "logisti|warehouse|gudang|supply chain|inventory",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Warehouse Staff Program",
+              "similarity": 0.3962377089333131
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.3498157603253276
+            },
+            {
+              "title": "Analyst Petroleum Jkt",
+              "similarity": 0.31344529512170993
+            },
+            {
+              "title": "DIVISI SUPPLY CHAIN MANAGEMENT",
+              "similarity": 0.31338227816991093
+            },
+            {
+              "title": "Analis Laboratorium",
+              "similarity": 0.31153640629008805
+            }
+          ]
+        },
+        {
+          "query": "mengatur persediaan barang di gudang dan distribusi",
+          "title": "logisti|warehouse|gudang|supply chain|inventory",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Warehouse Staff Program",
+              "similarity": 0.5808125148654426
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.5477315475809519
+            },
+            {
+              "title": "DIVISI SUPPLY CHAIN MANAGEMENT",
+              "similarity": 0.5259407744733835
+            },
+            {
+              "title": "ADMIN MERCHANDISING INTERN",
+              "similarity": 0.5220305356369863
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.5082329460390156
+            }
+          ]
+        },
+        {
+          "query": "Customer Service",
+          "title": "customer|pelanggan|call center|contact center",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.4668858792128958
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.4291231137970044
+            },
+            {
+              "title": "English Call Centre",
+              "similarity": 0.3988251966848111
+            },
+            {
+              "title": "Pengembangan Layanan Pelanggan",
+              "similarity": 0.396648203372024
+            },
+            {
+              "title": "Service Intern",
+              "similarity": 0.3962935830227252
+            }
+          ]
+        },
+        {
+          "query": "answering customer questions and handling complaints",
+          "title": "customer|pelanggan|call center|contact center",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Front End",
+              "similarity": 0.4456697196028472
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.43655068369707806
+            },
+            {
+              "title": "English Call Centre",
+              "similarity": 0.4328928052336778
+            },
+            {
+              "title": "Retail Associate",
+              "similarity": 0.39084839700285556
+            },
+            {
+              "title": "Product Consultant (Jakarta)",
+              "similarity": 0.38757701406848355
+            }
+          ]
+        },
+        {
+          "query": "Video Editor",
+          "title": "video|editor|multimedia|content creator",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.45082095207908424
+            },
+            {
+              "title": "Content Creator Intern",
+              "similarity": 0.38648460647618776
+            },
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.36109218745423277
+            },
+            {
+              "title": "SOSIAL MEDIA STAF INTERN",
+              "similarity": 0.31587146991114423
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.30782774031104054
+            }
+          ]
+        },
+        {
+          "query": "mengedit video dan membuat konten audiovisual",
+          "title": "video|editor|multimedia|content creator",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.5274256351121949
+            },
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.4655703879761859
+            },
+            {
+              "title": "Content Creator Intern",
+              "similarity": 0.461729992126493
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.39949243223600206
+            },
+            {
+              "title": "SOSIAL MEDIA STAF INTERN",
+              "similarity": 0.39938227489483324
+            }
+          ]
+        },
+        {
+          "query": "Teknik Sipil",
+          "title": "sipil|civil|konstruksi|construction|arsitek",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Staf Magang Teknik Sipil",
+              "similarity": 0.5556234610148749
+            },
+            {
+              "title": "Tenaga Teknis Pengendalian Konstruksi KNMP",
+              "similarity": 0.46429596548216523
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.4625452592916872
+            },
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.4396664384827318
+            },
+            {
+              "title": "Tenaga Teknis Survei & Pemetaan",
+              "similarity": 0.4326541765772163
+            }
+          ]
+        },
+        {
+          "query": "assisting civil engineering and building construction projects",
+          "title": "sipil|civil|konstruksi|construction|arsitek",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.5010239488319712
+            },
+            {
+              "title": "Tenaga Teknis Pengendalian Konstruksi KNMP",
+              "similarity": 0.45889541918313626
+            },
+            {
+              "title": "Staf Magang Teknik Sipil",
+              "similarity": 0.4444309785931182
+            },
+            {
+              "title": "Tenaga Teknis Pengendalian Konstruksi KNMP",
+              "similarity": 0.42284614451909874
+            },
+            {
+              "title": "Site Operations (Penempatan Majalengka)",
+              "similarity": 0.4071517418124131
+            }
+          ]
+        },
+        {
+          "query": "Administrasi",
+          "title": "admin|arsip|sekretaris|secretary",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.6278319168200142
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.6190368828413284
+            },
+            {
+              "title": "Staf Pemagang pada Subbagian Layanan Pengadaan Biro Umum dan Keuangan",
+              "similarity": 0.6138508161270124
+            },
+            {
+              "title": "Tenaga Administrasi & Yuridis Pertanahan",
+              "similarity": 0.5554815598152345
+            },
+            {
+              "title": "Customer Service / Administrasi",
+              "similarity": 0.5512256323218025
+            }
+          ]
+        },
+        {
+          "query": "mengelola surat dokumen dan pengarsipan kantor",
+          "title": "admin|arsip|sekretaris|secretary",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Staf Pemagang pada Subbagian Layanan Pengadaan Biro Umum dan Keuangan",
+              "similarity": 0.5635705778004194
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.5346311732374858
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.5324086342916416
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.4991099664466674
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.49563088239756325
+            }
+          ]
+        },
+        {
+          "query": "Pertanian",
+          "title": "pertanian|agro|kebun|agricultur|tanaman",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Agronomy Intern",
+              "similarity": 0.5184438893229526
+            },
+            {
+              "title": "Agronomi Site Intern",
+              "similarity": 0.5088600569279151
+            },
+            {
+              "title": "Agronomis / Penyuluh pertanian",
+              "similarity": 0.48446081158454035
+            },
+            {
+              "title": "Pengelola Legalisasi Pertanahan",
+              "similarity": 0.47754056065855366
+            },
+            {
+              "title": "Tenaga Administrasi & Yuridis Pertanahan",
+              "similarity": 0.4619714287750867
+            }
+          ]
+        },
+        {
+          "query": "membantu budidaya tanaman dan kegiatan perkebunan",
+          "title": "pertanian|agro|kebun|agricultur|tanaman",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Agronomis / Penyuluh pertanian",
+              "similarity": 0.501596277446879
+            },
+            {
+              "title": "Agronomi Site Intern",
+              "similarity": 0.49384506607657386
+            },
+            {
+              "title": "Agronomy Intern",
+              "similarity": 0.46241243400413623
+            },
+            {
+              "title": "Service Intern",
+              "similarity": 0.4054756591878004
+            },
+            {
+              "title": "Retail Associate",
+              "similarity": 0.39390448536141776
+            }
+          ]
+        },
+        {
+          "query": "Laboratorium",
+          "title": "laboratorium|laboratory|laboran|lab analyst",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Analis Laboratorium",
+              "similarity": 0.5796073411736415
+            },
+            {
+              "title": "Research and Development Laboratory",
+              "similarity": 0.5717812208940813
+            },
+            {
+              "title": "Ahli Teknologi Laboratorium Medik",
+              "similarity": 0.5517324167813058
+            },
+            {
+              "title": "Analyst Petroleum Jkt",
+              "similarity": 0.532775889833573
+            },
+            {
+              "title": "Pranata Laboratorium Kesehatan",
+              "similarity": 0.5324569656943368
+            }
+          ]
+        },
+        {
+          "query": "preparing laboratory samples and assisting laboratory tests",
+          "title": "laboratorium|laboratory|laboran|lab analyst",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Analis Laboratorium",
+              "similarity": 0.5101503102896459
+            },
+            {
+              "title": "Analyst Petroleum Jkt",
+              "similarity": 0.4935408666501644
+            },
+            {
+              "title": "Ahli Teknologi Laboratorium Medik",
+              "similarity": 0.45836562591739494
+            },
+            {
+              "title": "Pranata Laboratorium Kesehatan",
+              "similarity": 0.44410135454927513
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.4015670262142521
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimensions": 1536,
+      "documents": 80,
+      "tokens": 14429,
+      "elapsedMs": 3957,
+      "evaluationHits": 19,
+      "evaluationTotal": 20,
+      "results": [
+        {
+          "query": "AI Engineer",
+          "title": "ai engineer|machine learning|artificial intelligence|data scientist|computer vision|nlp",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.5173964962292175
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.46265732344538435
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.40753161642504665
+            },
+            {
+              "title": "Programmer Artificial Intelligence (AI)",
+              "similarity": 0.4050145104772582
+            },
+            {
+              "title": "BRILiaN Internship Assistant Software Developer",
+              "similarity": 0.36105063829811
+            }
+          ]
+        },
+        {
+          "query": "membangun model kecerdasan buatan dan machine learning",
+          "title": "ai engineer|machine learning|artificial intelligence|data scientist|computer vision|nlp",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "AI & Machine Learning Foundations",
+              "similarity": 0.4610025746055726
+            },
+            {
+              "title": "Programmer Artificial Intelligence (AI)",
+              "similarity": 0.44310268205930115
+            },
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.37578448059184666
+            },
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.34662880293990384
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.33931770706379893
+            }
+          ]
+        },
+        {
+          "query": "Data Analyst",
+          "title": "data analyst|analis data|data analis|business intelligence|data science",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5589481722109895
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5552735515315703
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.48319552523861375
+            },
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.3939144029469617
+            },
+            {
+              "title": "Programmer Artificial Intelligence (AI)",
+              "similarity": 0.3920379138961039
+            }
+          ]
+        },
+        {
+          "query": "mengolah angka dan membuat dashboard analisis data",
+          "title": "data analyst|analis data|data analis|business intelligence|data science",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Data Analyst",
+              "similarity": 0.5105616925888512
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.4935883504812182
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.421573168165537
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.41280512396156155
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.38261120045068253
+            }
+          ]
+        },
+        {
+          "query": "Backend Developer",
+          "title": "backend|back.end|software|programmer|developer",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.4211493808636533
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.3675684265807604
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.3548544904906521
+            },
+            {
+              "title": "BRILiaN Internship Assistant Software Developer",
+              "similarity": 0.3498727167214781
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.3491165802184497
+            }
+          ]
+        },
+        {
+          "query": "building backend services and application APIs",
+          "title": "backend|back.end|software|programmer|developer",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Service Intern",
+              "similarity": 0.2981336118740501
+            },
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.2958999788052097
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.2612610490143368
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.2547107145595646
+            },
+            {
+              "title": "BRILiaN Internship Assistant Software Developer",
+              "similarity": 0.25024700259032784
+            }
+          ]
+        },
+        {
+          "query": "Frontend Developer",
+          "title": "frontend|front.end|web developer|software|programmer",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.4466875707000497
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.41732415712021975
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.39417195758107937
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.38330615488149533
+            },
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.362356383219975
+            }
+          ]
+        },
+        {
+          "query": "membuat tampilan website dengan React dan JavaScript",
+          "title": "frontend|front.end|web developer|software|programmer",
+          "split": "evaluation",
+          "hitAt5": false,
+          "top5": [
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.41960248093982955
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.4066323395672953
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.3796155881912
+            },
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.3696772093547729
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.36407198404845076
+            }
+          ]
+        },
+        {
+          "query": "Quality Assurance",
+          "title": "quality assurance|tester|software test|qa engineer",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Quality Assurance",
+              "similarity": 0.5108638801168581
+            },
+            {
+              "title": "Junior staff quality assurance",
+              "similarity": 0.45999668998842935
+            },
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.42766152870169094
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.2794782357142651
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.26746392814959563
+            }
+          ]
+        },
+        {
+          "query": "testing software applications and reporting bugs",
+          "title": "quality assurance|tester|software test|qa engineer",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Software Quality Assurance Internship",
+              "similarity": 0.431570966654391
+            },
+            {
+              "title": "Quality Assurance",
+              "similarity": 0.41413219913863486
+            },
+            {
+              "title": "IT Development / Software Developer",
+              "similarity": 0.32351849745836603
+            },
+            {
+              "title": "BRILiaN Internship Assistant Software Developer",
+              "similarity": 0.3230376710676808
+            },
+            {
+              "title": "Junior staff quality assurance",
+              "similarity": 0.3179809738025199
+            }
+          ]
+        },
+        {
+          "query": "IT Support",
+          "title": "it support|technical support|helpdesk|jaringan|network",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT Support Internship",
+              "similarity": 0.5117423176358784
+            },
+            {
+              "title": "IT Support",
+              "similarity": 0.47516094647914997
+            },
+            {
+              "title": "IT Staff",
+              "similarity": 0.4420138472273152
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.3978134422175117
+            },
+            {
+              "title": "Network Technician Junior",
+              "similarity": 0.39583918574942345
+            }
+          ]
+        },
+        {
+          "query": "membantu pengguna memperbaiki komputer dan jaringan kantor",
+          "title": "it support|technical support|helpdesk|jaringan|network",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT Staff",
+              "similarity": 0.5099216303242429
+            },
+            {
+              "title": "Network Technician Junior",
+              "similarity": 0.48217089456807116
+            },
+            {
+              "title": "IT Support Internship",
+              "similarity": 0.47761968564191193
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.44610219404711415
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.44095198878505926
+            }
+          ]
+        },
+        {
+          "query": "Perawat",
+          "title": "perawat|keperawatan|nurse",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Perawat (D3 / Ners)",
+              "similarity": 0.5769168554772932
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.5662362474845963
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.5452625317909963
+            },
+            {
+              "title": "Bidan",
+              "similarity": 0.4682510747686024
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.42114636439418973
+            }
+          ]
+        },
+        {
+          "query": "mendampingi pasien dan membantu pelayanan keperawatan",
+          "title": "perawat|keperawatan|nurse",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Perawat",
+              "similarity": 0.5901612380110635
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.5532741882960153
+            },
+            {
+              "title": "Perawat (D3 / Ners)",
+              "similarity": 0.5239318508042174
+            },
+            {
+              "title": "IT Support",
+              "similarity": 0.47344477535216356
+            },
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.4702077913343601
+            }
+          ]
+        },
+        {
+          "query": "Akuntansi",
+          "title": "akuntan|account|keuangan|finance",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.596710325426443
+            },
+            {
+              "title": "Finance (Purchasing & Receiving) Intern",
+              "similarity": 0.5297181193442668
+            },
+            {
+              "title": "Staff Keuangan",
+              "similarity": 0.5288614162721501
+            },
+            {
+              "title": "Staf Pemagang pada Subbagian Layanan Pengadaan Biro Umum dan Keuangan",
+              "similarity": 0.46689779857206304
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.4646530431125484
+            }
+          ]
+        },
+        {
+          "query": "mencatat transaksi dan menyusun laporan keuangan",
+          "title": "akuntan|account|keuangan|finance",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Keuangan & Akuntansi — “Mengawal Angka, Menjaga Kepercayaan”",
+              "similarity": 0.513242494553765
+            },
+            {
+              "title": "Staff Keuangan",
+              "similarity": 0.46557345617338797
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.4572496910832342
+            },
+            {
+              "title": "Finance (Purchasing & Receiving) Intern",
+              "similarity": 0.45462446870263307
+            },
+            {
+              "title": "Data Analyst",
+              "similarity": 0.4319543620440527
+            }
+          ]
+        },
+        {
+          "query": "Human Resources",
+          "title": "human resource|(^|[^a-z])hr([^a-z]|$)|sdm|personalia|rekrut|sumber daya manusia",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "HR, GA & DCC Intern",
+              "similarity": 0.4738600534919897
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.4717477158868064
+            },
+            {
+              "title": "Human Resources & General Affairs Lucas",
+              "similarity": 0.45174069187055466
+            },
+            {
+              "title": "HR People Partner Project Support (Tbg)",
+              "similarity": 0.4497196629040445
+            },
+            {
+              "title": "Staff HR & Organization Development",
+              "similarity": 0.4488213668681169
+            }
+          ]
+        },
+        {
+          "query": "mengelola data karyawan dan proses rekrutmen pegawai",
+          "title": "human resource|(^|[^a-z])hr([^a-z]|$)|sdm|personalia|rekrut|sumber daya manusia",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.6006448266855386
+            },
+            {
+              "title": "Staff HR & Organization Development",
+              "similarity": 0.5221527468463592
+            },
+            {
+              "title": "HR, GA & DCC Intern",
+              "similarity": 0.4897036694462997
+            },
+            {
+              "title": "Human Resources & General Affairs Lucas",
+              "similarity": 0.4807782996292147
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.4701317739627484
+            }
+          ]
+        },
+        {
+          "query": "Digital Marketing",
+          "title": "marketing|pemasaran|digital campaign",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Digital Marketing Officer",
+              "similarity": 0.46250437442290604
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.4247981070834044
+            },
+            {
+              "title": "CONTENT CREATOR & SOCIAL MEDIA SPECIALIST – RETAIL",
+              "similarity": 0.4212909326082581
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.39866646527980265
+            },
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.3889615899279306
+            }
+          ]
+        },
+        {
+          "query": "promoting products through digital marketing campaigns",
+          "title": "marketing|pemasaran|digital campaign",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Digital Marketing Officer",
+              "similarity": 0.44069636193557926
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.38975187675672274
+            },
+            {
+              "title": "CONTENT CREATOR & SOCIAL MEDIA SPECIALIST – RETAIL",
+              "similarity": 0.35532003286436975
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.3543894839655195
+            },
+            {
+              "title": "MARKETING / PROMOTION",
+              "similarity": 0.3449607211460375
+            }
+          ]
+        },
+        {
+          "query": "Desain Grafis",
+          "title": "desain|design|graphic|kreatif",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.5673788355642273
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.559173652169239
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5292307710945465
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.5267890487374984
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.515624320639688
+            }
+          ]
+        },
+        {
+          "query": "mendesain materi visual poster dan konten promosi",
+          "title": "desain|design|graphic|kreatif",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.5061662353207907
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.49534968247246525
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.4878064650813485
+            },
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.4820571380163301
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.4670218482529549
+            }
+          ]
+        },
+        {
+          "query": "UI UX Designer",
+          "title": "ui.?ux|ux|ui designer|product design",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.5903712056382062
+            },
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5314031831435955
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.49443361984367584
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.37036896140114095
+            },
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.3323231875468764
+            }
+          ]
+        },
+        {
+          "query": "designing user interfaces and improving user experience",
+          "title": "ui.?ux|ux|ui designer|product design",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "IT UI/UX",
+              "similarity": 0.5360054051619727
+            },
+            {
+              "title": "UI/UX Designer Intern",
+              "similarity": 0.49099657290571486
+            },
+            {
+              "title": "UI/UX",
+              "similarity": 0.40480886595935317
+            },
+            {
+              "title": "Packaging Design Intern",
+              "similarity": 0.323076797483111
+            },
+            {
+              "title": "BRILiaN Internship Assistant Graphic Design",
+              "similarity": 0.30013000276323964
+            }
+          ]
+        },
+        {
+          "query": "Legal",
+          "title": "legal|hukum|law",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Junior Legal Intern - BSI Kantor Pusat",
+              "similarity": 0.24359862668654841
+            },
+            {
+              "title": "Pengelola Legalisasi Pertanahan",
+              "similarity": 0.2368212359348547
+            },
+            {
+              "title": "Tenaga Administrasi & Yuridis Pertanahan",
+              "similarity": 0.2269190341505123
+            },
+            {
+              "title": "Tenaga Administrasi & Yuridis Pertanahan",
+              "similarity": 0.2102813140085118
+            },
+            {
+              "title": "Human Resources & General Affairs Lucas",
+              "similarity": 0.18687203527957763
+            }
+          ]
+        },
+        {
+          "query": "meninjau kontrak dan membantu urusan hukum perusahaan",
+          "title": "legal|hukum|law",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Junior Legal Intern - BSI Kantor Pusat",
+              "similarity": 0.483013688917751
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.47824838702689476
+            },
+            {
+              "title": "Internship Underwriting Energy, Marine & Aviation",
+              "similarity": 0.46549596600311816
+            },
+            {
+              "title": "ADMIN MERCHANDISING INTERN",
+              "similarity": 0.4246905844055391
+            },
+            {
+              "title": "Service Intern",
+              "similarity": 0.42396145658608475
+            }
+          ]
+        },
+        {
+          "query": "Logistik",
+          "title": "logisti|warehouse|gudang|supply chain|inventory",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Warehouse Staff Program",
+              "similarity": 0.3389878676983642
+            },
+            {
+              "title": "Analyst Petroleum Jkt",
+              "similarity": 0.29441469920675445
+            },
+            {
+              "title": "DIVISI SUPPLY CHAIN MANAGEMENT",
+              "similarity": 0.28989936722098264
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.2881375096126533
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.2844590743832214
+            }
+          ]
+        },
+        {
+          "query": "mengatur persediaan barang di gudang dan distribusi",
+          "title": "logisti|warehouse|gudang|supply chain|inventory",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Warehouse Staff Program",
+              "similarity": 0.5369773257293957
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.5311687824810178
+            },
+            {
+              "title": "ADMIN MERCHANDISING INTERN",
+              "similarity": 0.5179646892045753
+            },
+            {
+              "title": "DIVISI SUPPLY CHAIN MANAGEMENT",
+              "similarity": 0.49657423534114287
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.4899391411703391
+            }
+          ]
+        },
+        {
+          "query": "Customer Service",
+          "title": "customer|pelanggan|call center|contact center",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.4176887551520281
+            },
+            {
+              "title": "English Call Centre",
+              "similarity": 0.36746639484204024
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.36569265606641466
+            },
+            {
+              "title": "Service Intern",
+              "similarity": 0.3556193250744286
+            },
+            {
+              "title": "Internship Underwriting Energy, Marine & Aviation",
+              "similarity": 0.35149674621538907
+            }
+          ]
+        },
+        {
+          "query": "answering customer questions and handling complaints",
+          "title": "customer|pelanggan|call center|contact center",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "English Call Centre",
+              "similarity": 0.41101455520015406
+            },
+            {
+              "title": "Front End",
+              "similarity": 0.3894537805886671
+            },
+            {
+              "title": "Customer Relationship Management",
+              "similarity": 0.38846019441541557
+            },
+            {
+              "title": "Retail Associate",
+              "similarity": 0.3506185619869484
+            },
+            {
+              "title": "Customer Service / Administrasi",
+              "similarity": 0.34686563777052015
+            }
+          ]
+        },
+        {
+          "query": "Video Editor",
+          "title": "video|editor|multimedia|content creator",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.4340265379531445
+            },
+            {
+              "title": "Content Creator Intern",
+              "similarity": 0.36731355056554094
+            },
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.3401288721055238
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.2945873412825222
+            },
+            {
+              "title": "SOSIAL MEDIA STAF INTERN",
+              "similarity": 0.2935827260886299
+            }
+          ]
+        },
+        {
+          "query": "mengedit video dan membuat konten audiovisual",
+          "title": "video|editor|multimedia|content creator",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Social Media & Content Creator",
+              "similarity": 0.5432326362470121
+            },
+            {
+              "title": "Content Creator Intern",
+              "similarity": 0.46638678570332104
+            },
+            {
+              "title": "Graphic Design Intern",
+              "similarity": 0.4618326874677905
+            },
+            {
+              "title": "Marketing Intern",
+              "similarity": 0.4025027102155434
+            },
+            {
+              "title": "SOSIAL MEDIA STAF INTERN",
+              "similarity": 0.3957804032536387
+            }
+          ]
+        },
+        {
+          "query": "Teknik Sipil",
+          "title": "sipil|civil|konstruksi|construction|arsitek",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Staf Magang Teknik Sipil",
+              "similarity": 0.5391321433463077
+            },
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.43222908570231766
+            },
+            {
+              "title": "Tenaga Teknis Pengendalian Konstruksi KNMP",
+              "similarity": 0.4319784302427365
+            },
+            {
+              "title": "Tenaga Teknis Survei & Pemetaan",
+              "similarity": 0.4179985658482792
+            },
+            {
+              "title": "AI Engineer Intern (Jakarta)",
+              "similarity": 0.4061682694506601
+            }
+          ]
+        },
+        {
+          "query": "assisting civil engineering and building construction projects",
+          "title": "sipil|civil|konstruksi|construction|arsitek",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Engineering Assistant Intern",
+              "similarity": 0.48868620919574823
+            },
+            {
+              "title": "Tenaga Teknis Pengendalian Konstruksi KNMP",
+              "similarity": 0.44446952633825276
+            },
+            {
+              "title": "Staf Magang Teknik Sipil",
+              "similarity": 0.42086912469676463
+            },
+            {
+              "title": "Tenaga Teknis Pengendalian Konstruksi KNMP",
+              "similarity": 0.41080346737226137
+            },
+            {
+              "title": "Site Operations (Penempatan Majalengka)",
+              "similarity": 0.3873764063682188
+            }
+          ]
+        },
+        {
+          "query": "Administrasi",
+          "title": "admin|arsip|sekretaris|secretary",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Staf Pemagang pada Subbagian Layanan Pengadaan Biro Umum dan Keuangan",
+              "similarity": 0.558236787901393
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.5561949265510293
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.5492126505329225
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.5199644821966558
+            },
+            {
+              "title": "Tenaga Administrasi & Yuridis Pertanahan",
+              "similarity": 0.5035867784801553
+            }
+          ]
+        },
+        {
+          "query": "mengelola surat dokumen dan pengarsipan kantor",
+          "title": "admin|arsip|sekretaris|secretary",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Staf Pemagang pada Subbagian Layanan Pengadaan Biro Umum dan Keuangan",
+              "similarity": 0.5344875031107676
+            },
+            {
+              "title": "Admin Personalia",
+              "similarity": 0.5181862520905725
+            },
+            {
+              "title": "ADMIN WAREHOUSE",
+              "similarity": 0.5052216845720068
+            },
+            {
+              "title": "Staff Administrasi Resto",
+              "similarity": 0.47984063293392865
+            },
+            {
+              "title": "ADMIN MERCHANDISING INTERN",
+              "similarity": 0.46690646141081515
+            }
+          ]
+        },
+        {
+          "query": "Pertanian",
+          "title": "pertanian|agro|kebun|agricultur|tanaman",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Agronomy Intern",
+              "similarity": 0.516649133442229
+            },
+            {
+              "title": "Agronomi Site Intern",
+              "similarity": 0.49840759204562346
+            },
+            {
+              "title": "Agronomis / Penyuluh pertanian",
+              "similarity": 0.47568501209451597
+            },
+            {
+              "title": "Pengelola Legalisasi Pertanahan",
+              "similarity": 0.4755636928315994
+            },
+            {
+              "title": "HR People Partner Project Support (Tbg)",
+              "similarity": 0.42580458486349926
+            }
+          ]
+        },
+        {
+          "query": "membantu budidaya tanaman dan kegiatan perkebunan",
+          "title": "pertanian|agro|kebun|agricultur|tanaman",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Agronomi Site Intern",
+              "similarity": 0.49934943788696273
+            },
+            {
+              "title": "Agronomy Intern",
+              "similarity": 0.4755902221265842
+            },
+            {
+              "title": "Agronomis / Penyuluh pertanian",
+              "similarity": 0.467906674661549
+            },
+            {
+              "title": "Service Intern",
+              "similarity": 0.4259900997674322
+            },
+            {
+              "title": "HR People Partner Project Support (Tbg)",
+              "similarity": 0.395225001937888
+            }
+          ]
+        },
+        {
+          "query": "Laboratorium",
+          "title": "laboratorium|laboratory|laboran|lab analyst",
+          "split": "calibration",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Research and Development Laboratory",
+              "similarity": 0.5287543857318155
+            },
+            {
+              "title": "Analis Laboratorium",
+              "similarity": 0.5186047645405836
+            },
+            {
+              "title": "Ahli Teknologi Laboratorium Medik",
+              "similarity": 0.4889071955470854
+            },
+            {
+              "title": "Pranata Laboratorium Kesehatan",
+              "similarity": 0.48027220694712014
+            },
+            {
+              "title": "Analyst Petroleum Jkt",
+              "similarity": 0.4735900278473082
+            }
+          ]
+        },
+        {
+          "query": "preparing laboratory samples and assisting laboratory tests",
+          "title": "laboratorium|laboratory|laboran|lab analyst",
+          "split": "evaluation",
+          "hitAt5": true,
+          "top5": [
+            {
+              "title": "Analyst Petroleum Jkt",
+              "similarity": 0.46529431214082706
+            },
+            {
+              "title": "Analis Laboratorium",
+              "similarity": 0.4591933381188369
+            },
+            {
+              "title": "Ahli Teknologi Laboratorium Medik",
+              "similarity": 0.4218787276703324
+            },
+            {
+              "title": "Pranata Laboratorium Kesehatan",
+              "similarity": 0.40417542455122657
+            },
+            {
+              "title": "Perawat",
+              "similarity": 0.3556048954458788
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,5 @@
-export const CATEGORIES = [
-  { value: "ai", label: "AI & Machine Learning" },
-  { value: "data", label: "Data" },
-  { value: "dev", label: "Software & Development" },
-  { value: "it", label: "IT Support & Jaringan" },
-  { value: "lain", label: "Bidang lainnya" },
-] as const;
+import { CATEGORIES, type Category } from "./job-categories";
+export { CATEGORIES, type Category } from "./job-categories";
 
 export const SORT_OPTIONS = [
   { value: "portal", label: "Urutan portal" },
@@ -14,7 +9,6 @@ export const SORT_OPTIONS = [
   { value: "az", label: "Nama posisi A–Z" },
 ] as const;
 
-export type Category = (typeof CATEGORIES)[number]["value"];
 export type Sort = (typeof SORT_OPTIONS)[number]["value"] | "relevance";
 
 export type Filters = {
@@ -57,7 +51,7 @@ export type Job = {
 };
 
 export type JobDetail = Job & { description: string; address: string };
-export type Option = { value: string; label: string; count?: number; province?: string };
+export type Option = { value: string; label: string; count?: number; province?: string; keywords?: readonly string[] };
 export type Facets = {
   total: number;
   provinces: Option[];
@@ -65,7 +59,7 @@ export type Facets = {
   categories: Option[];
   organizations: number;
 };
-export type SearchResult = { jobs: Job[]; total: number; page: number; pages: number; pageSize: number };
+export type SearchResult = { jobs: Job[]; total: number; page: number; pages: number; pageSize: number; meta?: { mode: "hybrid" | "keyword"; fallbackReason?: string } };
 
 export function parseFilters(params: URLSearchParams): Filters {
   const integer = (key: string, max = 99999) => {

@@ -1,0 +1,59 @@
+
+> maganghub-explorer@0.1.0 catalog:status
+> tsx scripts/catalog-status.ts
+
+{
+  "snapshots": [
+    {
+      "id": "4215bd02dba50724b46df6b5f3720fe265af008c1d2c63c93ab31a1b3e6a8793",
+      "status": "pending",
+      "snapshot_date": "2026-10-31",
+      "expected_count": 27667,
+      "active": false,
+      "imported": 27667,
+      "embedded": 27667
+    }
+  ],
+  "sizes": [
+    {
+      "table_name": "mh_active_catalog",
+      "bytes": "16384"
+    },
+    {
+      "table_name": "mh_embedding_runs",
+      "bytes": "81920"
+    },
+    {
+      "table_name": "mh_embeddings",
+      "bytes": "83812352"
+    },
+    {
+      "table_name": "mh_jobs",
+      "bytes": "116932608"
+    },
+    {
+      "table_name": "mh_migrations",
+      "bytes": "32768"
+    },
+    {
+      "table_name": "mh_query_cache",
+      "bytes": "24576"
+    },
+    {
+      "table_name": "mh_rate_limits",
+      "bytes": "32768"
+    },
+    {
+      "table_name": "mh_snapshots",
+      "bytes": "139264"
+    }
+  ],
+  "database": {
+    "database_bytes": "209518592"
+  },
+  "usage": {
+    "embedding_documents": "27605",
+    "embedding_tokens": "4654958",
+    "estimated_cost_usd": "0.09309916000000000160"
+  }
+}

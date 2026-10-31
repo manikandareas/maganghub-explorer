@@ -1,0 +1,70 @@
+{
+  "scope": "Local app with live Neon and OpenRouter; not deployed production acceptance",
+  "unitRegressionTests": {
+    "passed": 95,
+    "failed": 0
+  },
+  "neonIntegrationTests": {
+    "passed": 6,
+    "failed": 0,
+    "log": "integration-checks.log"
+  },
+  "localHttpChecks": {
+    "passed": 23,
+    "failed": 0,
+    "report": "api-verification.json"
+  },
+  "typecheck": {
+    "passed": true,
+    "log": "typecheck.log"
+  },
+  "lint": {
+    "passed": true,
+    "log": "lint.log"
+  },
+  "productionBuild": {
+    "passed": true,
+    "log": "build.log"
+  },
+  "browser": {
+    "desktopFieldAlias": "HR -> SDM & Rekrutmen, 1534 results, URL cat=sdm",
+    "mobileFieldFilter": "Kesehatan & Farmasi, 2743 results, URL cat=kesehatan",
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "earlierChecks": [
+      "natural language semantic search",
+      "education filter",
+      "save and remove bookmark",
+      "detail and source link"
+    ],
+    "screenshots": [
+      "fields-desktop.png",
+      "fields-mobile-drawer.png",
+      "fields-mobile.png",
+      "browser-desktop.png",
+      "browser-mobile.png"
+    ]
+  },
+  "embeddingCoverage": {
+    "jobs": 27667,
+    "embedded": 27667
+  },
+  "taxonomy": {
+    "version": 2,
+    "options": 22,
+    "specific": 24217,
+    "other": 3450,
+    "repeatChanged": 0,
+    "embeddingTokensUnchanged": true
+  },
+  "notVerified": [
+    "production deployment",
+    "production traffic and cold-start SLO",
+    "consumer GPT/Claude/Gemini integration",
+    "exhaustive category accuracy"
+  ]
+}

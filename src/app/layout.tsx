@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import { siteUrl } from "@/lib/server/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
+  alternates: { canonical: "/" },
   title: { default: "MagangHub Explorer — Temukan awal kariermu", template: "%s | MagangHub Explorer" },
   description: "Jelajahi 27.667 lowongan Program Magang Nasional. Cari berdasarkan posisi, lokasi, pendidikan, dan minat. Data snapshot 31 Oktober 2026.",
   applicationName: "MagangHub Explorer",

@@ -1,0 +1,262 @@
+
+> maganghub-explorer@0.1.0 catalog:classify
+> tsx scripts/classify-catalog.ts
+
+{
+  "event": "classification_complete",
+  "snapshotId": "4215bd02dba50724b46df6b5f3720fe265af008c1d2c63c93ab31a1b3e6a8793",
+  "categoryVersion": 2,
+  "jobs": 27667,
+  "changed": 0,
+  "embedded": 27667,
+  "embeddingTokensUnchanged": true,
+  "categories": [
+    {
+      "value": "administrasi",
+      "label": "Administrasi & Operasional",
+      "keywords": [
+        "admin",
+        "office",
+        "operations",
+        "sekretaris"
+      ],
+      "count": 3242
+    },
+    {
+      "value": "ai",
+      "label": "AI & Machine Learning",
+      "keywords": [
+        "artificial intelligence",
+        "kecerdasan buatan"
+      ],
+      "count": 49
+    },
+    {
+      "value": "bisnis",
+      "label": "Bisnis & Manajemen",
+      "keywords": [
+        "business",
+        "strategy",
+        "project",
+        "konsultan"
+      ],
+      "count": 942
+    },
+    {
+      "value": "data",
+      "label": "Data & Analitik",
+      "keywords": [
+        "analyst",
+        "analytics",
+        "business intelligence"
+      ],
+      "count": 526
+    },
+    {
+      "value": "desain",
+      "label": "Desain & Media Kreatif",
+      "keywords": [
+        "design",
+        "graphic",
+        "video",
+        "fotografi",
+        "UI",
+        "UX",
+        "content"
+      ],
+      "count": 1303
+    },
+    {
+      "value": "hukum",
+      "label": "Hukum & Kepatuhan",
+      "keywords": [
+        "legal",
+        "law",
+        "compliance"
+      ],
+      "count": 601
+    },
+    {
+      "value": "it",
+      "label": "IT Support & Jaringan",
+      "keywords": [
+        "network",
+        "helpdesk",
+        "sysadmin"
+      ],
+      "count": 766
+    },
+    {
+      "value": "kesehatan",
+      "label": "Kesehatan & Farmasi",
+      "keywords": [
+        "perawat",
+        "medis",
+        "dokter",
+        "pharmacy",
+        "nurse"
+      ],
+      "count": 2743
+    },
+    {
+      "value": "keuangan",
+      "label": "Keuangan & Akuntansi",
+      "keywords": [
+        "finance",
+        "accounting",
+        "audit",
+        "pajak",
+        "bank"
+      ],
+      "count": 2290
+    },
+    {
+      "value": "lingkungan",
+      "label": "Lingkungan & K3",
+      "keywords": [
+        "environment",
+        "safety",
+        "HSE",
+        "EHS",
+        "sustainability"
+      ],
+      "count": 500
+    },
+    {
+      "value": "logistik",
+      "label": "Logistik & Pengadaan",
+      "keywords": [
+        "supply chain",
+        "warehouse",
+        "purchasing",
+        "procurement",
+        "gudang"
+      ],
+      "count": 917
+    },
+    {
+      "value": "pariwisata",
+      "label": "Pariwisata, Hotel & Kuliner",
+      "keywords": [
+        "hospitality",
+        "tourism",
+        "cook",
+        "chef",
+        "barista"
+      ],
+      "count": 347
+    },
+    {
+      "value": "pemasaran",
+      "label": "Pemasaran, Penjualan & Komunikasi",
+      "keywords": [
+        "marketing",
+        "sales",
+        "PR",
+        "public relations",
+        "kehumasan"
+      ],
+      "count": 2946
+    },
+    {
+      "value": "pendidikan",
+      "label": "Pendidikan & Pelatihan",
+      "keywords": [
+        "guru",
+        "teacher",
+        "kurikulum",
+        "pengajar",
+        "instruktur"
+      ],
+      "count": 297
+    },
+    {
+      "value": "pertanian",
+      "label": "Pertanian, Peternakan & Perikanan",
+      "keywords": [
+        "agro",
+        "agriculture",
+        "perkebunan",
+        "budidaya"
+      ],
+      "count": 212
+    },
+    {
+      "value": "manufaktur",
+      "label": "Produksi & Manufaktur",
+      "keywords": [
+        "production",
+        "manufacturing",
+        "QC",
+        "quality control",
+        "operator"
+      ],
+      "count": 924
+    },
+    {
+      "value": "publik",
+      "label": "Pelayanan Publik & Sosial",
+      "keywords": [
+        "pemerintahan",
+        "penyuluh",
+        "fasilitator",
+        "masyarakat"
+      ],
+      "count": 440
+    },
+    {
+      "value": "riset",
+      "label": "Riset & Laboratorium",
+      "keywords": [
+        "research",
+        "periset",
+        "peneliti",
+        "laboratory",
+        "laboran"
+      ],
+      "count": 743
+    },
+    {
+      "value": "sdm",
+      "label": "SDM & Rekrutmen",
+      "keywords": [
+        "HR",
+        "HC",
+        "human resources",
+        "personalia",
+        "people",
+        "talent"
+      ],
+      "count": 1534
+    },
+    {
+      "value": "dev",
+      "label": "Software & Development",
+      "keywords": [
+        "programmer",
+        "developer",
+        "aplikasi",
+        "web"
+      ],
+      "count": 635
+    },
+    {
+      "value": "teknik",
+      "label": "Teknik & Konstruksi",
+      "keywords": [
+        "engineering",
+        "civil",
+        "mechanical",
+        "electrical",
+        "arsitektur"
+      ],
+      "count": 2260
+    },
+    {
+      "value": "lain",
+      "label": "Bidang lainnya",
+      "keywords": [],
+      "count": 3450
+    }
+  ]
+}

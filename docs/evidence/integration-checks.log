@@ -1,0 +1,18 @@
+
+> maganghub-explorer@0.1.0 test:integration
+> tsx --test tests/integration/*.test.ts
+
+✔ SQL keyword search matches snapshot filters, explicit sort, token normalization and ranking (4158.468375ms)
+✔ pending snapshot cannot be activated before all documents and embeddings exist (45.726ms)
+✔ semantic candidates obey filters before selection and pagination stays stable (670.78475ms)
+✔ durable rate buckets reject excess requests and stay scoped to the caller (140.431708ms)
+✔ API rate errors return CORS, structured error, Retry-After and no shared caching (172.325625ms)
+✔ missing semantic provider falls back to keyword with explicit metadata (174.684084ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7234.016708

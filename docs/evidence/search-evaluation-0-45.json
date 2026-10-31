@@ -1,0 +1,681 @@
+{
+  "summary": {
+    "snapshotId": "4215bd02dba50724b46df6b5f3720fe265af008c1d2c63c93ab31a1b3e6a8793",
+    "threshold": 0.45,
+    "scope": "Full-catalog manually labelled title relevance; not production SLO proof",
+    "evaluationHits": 20,
+    "keywordEvaluationHits": 6,
+    "evaluationTotal": 20,
+    "p50SqlPairMs": 205,
+    "p95SqlPairMs": 338,
+    "queryEmbeddingTokens": 317
+  },
+  "results": [
+    {
+      "query": "AI Engineer",
+      "title": "ai engineer|machine learning|artificial intelligence|data scientist|computer vision|nlp",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 302,
+      "total": 209,
+      "titles": [
+        "AI Engineer",
+        "AI Engineer",
+        "AI Engineer",
+        "AI Engineer",
+        "AI Engineer Intern (Jakarta)"
+      ]
+    },
+    {
+      "query": "membangun model kecerdasan buatan dan machine learning",
+      "title": "ai engineer|machine learning|artificial intelligence|data scientist|computer vision|nlp",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 181,
+      "total": 34,
+      "titles": [
+        "AI Engineer",
+        "Spesialis Kecerdasan Artifisial",
+        "PRE - Asisten periset instrumentasi dan machine learning",
+        "PRKAKS - Asisten Periset Computer Vision dan Image Processing 1",
+        "Asisten Periset untuk Sistem Intelijen Teknologi Manufaktur Terintegrasi"
+      ]
+    },
+    {
+      "query": "Data Analyst",
+      "title": "data analyst|analis data|data analis|business intelligence|data science",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 189,
+      "total": 424,
+      "titles": [
+        "Data Analyst",
+        "Data Analyst",
+        "Data Analyst",
+        "Data Analyst",
+        "Data Analyst"
+      ]
+    },
+    {
+      "query": "mengolah angka dan membuat dashboard analisis data",
+      "title": "data analyst|analis data|data analis|business intelligence|data science",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 179,
+      "total": 200,
+      "titles": [
+        "Data Analyst and Visualization - DPS",
+        "IT Data Analyst PML",
+        "Data Analyst Intern",
+        "Data Analyst dan Reporting",
+        "Data Analyst"
+      ]
+    },
+    {
+      "query": "Backend Developer",
+      "title": "backend|back.end|software|programmer|developer",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 242,
+      "total": 182,
+      "titles": [
+        "Back End Developer",
+        "Backend Developer",
+        "Backend Developer",
+        "Backend Developer",
+        "Backend Developer"
+      ]
+    },
+    {
+      "query": "building backend services and application APIs",
+      "title": "backend|back.end|software|programmer|developer",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 269,
+      "total": 14,
+      "titles": [
+        "FullStack Development - Enterprise Support System & AI Automation",
+        "Backend API Development Specialist",
+        "Backend Developer",
+        "Backend Engineer Internship",
+        "Backend Developer"
+      ]
+    },
+    {
+      "query": "Frontend Developer",
+      "title": "frontend|front.end|web developer|software|programmer",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 213,
+      "total": 202,
+      "titles": [
+        "Frontend Developer",
+        "Frontend Developer",
+        "Front End Developer",
+        "Front End Developer",
+        "Front-End Developer"
+      ]
+    },
+    {
+      "query": "membuat tampilan website dengan React dan JavaScript",
+      "title": "frontend|front.end|web developer|software|programmer",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 204,
+      "total": 110,
+      "titles": [
+        "Frontend Engineer",
+        "UI/UX Digital Experience",
+        "Web Developer",
+        "Frontend Development & User Interface Implementation",
+        "Front-End Web Developer"
+      ]
+    },
+    {
+      "query": "Quality Assurance",
+      "title": "quality assurance|tester|software test|qa engineer",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 205,
+      "total": 219,
+      "titles": [
+        "Quality Assurance",
+        "Quality Assurance",
+        "Quality Assurance",
+        "Quality Assurance",
+        "Quality Assurance"
+      ]
+    },
+    {
+      "query": "testing software applications and reporting bugs",
+      "title": "quality assurance|tester|software test|qa engineer",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 200,
+      "total": 17,
+      "titles": [
+        "Quality Assurance",
+        "IT Quality Assurance Tester",
+        "IT Quality Assurance & Software Tester Intern",
+        "QA Tester & Technical Writer",
+        "Technology - Quality Assurance Intern"
+      ]
+    },
+    {
+      "query": "IT Support",
+      "title": "it support|technical support|helpdesk|jaringan|network",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 183,
+      "total": 339,
+      "titles": [
+        "IT Support",
+        "IT Support",
+        "IT Support",
+        "IT Support",
+        "IT Support"
+      ]
+    },
+    {
+      "query": "membantu pengguna memperbaiki komputer dan jaringan kantor",
+      "title": "it support|technical support|helpdesk|jaringan|network",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 175,
+      "total": 200,
+      "titles": [
+        "IT Runner",
+        "IT SUPPORT",
+        "Teknisi Komputer dan Jaringan",
+        "Technical Support",
+        "IT Support"
+      ]
+    },
+    {
+      "query": "Perawat",
+      "title": "perawat|keperawatan|nurse",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 216,
+      "total": 604,
+      "titles": [
+        "PERAWAT",
+        "Perawat",
+        "Perawat",
+        "Perawat",
+        "Perawat"
+      ]
+    },
+    {
+      "query": "mendampingi pasien dan membantu pelayanan keperawatan",
+      "title": "perawat|keperawatan|nurse",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 203,
+      "total": 204,
+      "titles": [
+        "Patient Navigator",
+        "Perawat (IGD & Rawat Inap)",
+        "Perawat",
+        "Perawat Pelaksana - Rawat Inap",
+        "Perawat Gigi"
+      ]
+    },
+    {
+      "query": "Akuntansi",
+      "title": "akuntan|account|keuangan|finance",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 301,
+      "total": 3939,
+      "titles": [
+        "AKUNTANSI",
+        "AKUNTANSI",
+        "Akuntansi",
+        "Akuntansi",
+        "Akuntansi"
+      ]
+    },
+    {
+      "query": "mencatat transaksi dan menyusun laporan keuangan",
+      "title": "akuntan|account|keuangan|finance",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 182,
+      "total": 216,
+      "titles": [
+        "Finance Officer",
+        "Accounting",
+        "Accounting",
+        "Staf Keuangan",
+        "Finance & Accounting Staff"
+      ]
+    },
+    {
+      "query": "Human Resources",
+      "title": "human resource|(^|[^a-z])hr([^a-z]|$)|sdm|personalia|rekrut|sumber daya manusia",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 197,
+      "total": 377,
+      "titles": [
+        "Human Resources",
+        "Human Resources",
+        "Human Resources",
+        "Human Resources",
+        "Human Resources"
+      ]
+    },
+    {
+      "query": "mengelola data karyawan dan proses rekrutmen pegawai",
+      "title": "human resource|(^|[^a-z])hr([^a-z]|$)|sdm|personalia|rekrut|sumber daya manusia",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 186,
+      "total": 200,
+      "titles": [
+        "HR Recruitment",
+        "HR Admin",
+        "Recruitment Staff",
+        "HR Rekrutmen",
+        "RECRUITMENT AND ADMINISTRATION"
+      ]
+    },
+    {
+      "query": "Digital Marketing",
+      "title": "marketing|pemasaran|digital campaign",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 195,
+      "total": 1126,
+      "titles": [
+        "Digital marketing",
+        "Digital Marketing",
+        "Digital Marketing",
+        "Digital Marketing",
+        "Digital Marketing"
+      ]
+    },
+    {
+      "query": "promoting products through digital marketing campaigns",
+      "title": "marketing|pemasaran|digital campaign",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 227,
+      "total": 42,
+      "titles": [
+        "Digital Marketing",
+        "Brand Marketing",
+        "Digital Marketing",
+        "DIGITAL MARKETING",
+        "Digital Marketing"
+      ]
+    },
+    {
+      "query": "Desain Grafis",
+      "title": "desain|design|graphic|kreatif",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 213,
+      "total": 978,
+      "titles": [
+        "Desain Grafis",
+        "Desain Grafis",
+        "Desain Grafis",
+        "Desain Grafis",
+        "desain grafis"
+      ]
+    },
+    {
+      "query": "mendesain materi visual poster dan konten promosi",
+      "title": "desain|design|graphic|kreatif",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 193,
+      "total": 202,
+      "titles": [
+        "Desain Komunikasi Visual (DKV)",
+        "Graphic Design",
+        "Graphic Design Internship",
+        "Marketing & Communication",
+        "Design Graphic"
+      ]
+    },
+    {
+      "query": "UI UX Designer",
+      "title": "ui.?ux|ux|ui designer|product design",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 189,
+      "total": 164,
+      "titles": [
+        "Ui/UX Designer",
+        "UI/UX Designer",
+        "UI/UX Designer",
+        "UI/UX Designer",
+        "UI/UX Designer"
+      ]
+    },
+    {
+      "query": "designing user interfaces and improving user experience",
+      "title": "ui.?ux|ux|ui designer|product design",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 201,
+      "total": 48,
+      "titles": [
+        "UI/UX Design",
+        "IT UI/UX",
+        "UI/UX Product Designer",
+        "UI/UX",
+        "UI/UX Designer Intern"
+      ]
+    },
+    {
+      "query": "Legal",
+      "title": "legal|hukum|law",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 338,
+      "total": 459,
+      "titles": [
+        "LEGAL",
+        "Legal",
+        "Legal",
+        "LEGAL",
+        "Legal"
+      ]
+    },
+    {
+      "query": "meninjau kontrak dan membantu urusan hukum perusahaan",
+      "title": "legal|hukum|law",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 196,
+      "total": 200,
+      "titles": [
+        "Staff Legal dan Kepatuhan Regulasi",
+        "CORPORATE LEGAL ADMINISTARTION OFFICER",
+        "Corporate Legal & Compliance Intern",
+        "LEGAL & CONTRACT INTERN",
+        "Staf Legal"
+      ]
+    },
+    {
+      "query": "Logistik",
+      "title": "logisti|warehouse|gudang|supply chain|inventory",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 226,
+      "total": 1131,
+      "titles": [
+        "Logistik",
+        "Logistik",
+        "Logistik",
+        "Logistik",
+        "Logistik"
+      ]
+    },
+    {
+      "query": "mengatur persediaan barang di gudang dan distribusi",
+      "title": "logisti|warehouse|gudang|supply chain|inventory",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 190,
+      "total": 200,
+      "titles": [
+        "Admin Gudang E-Commerce",
+        "Inventory Control",
+        "INVENTORY CONTROL",
+        "Inventory Management",
+        "Admin Penjualan Warehouse"
+      ]
+    },
+    {
+      "query": "Customer Service",
+      "title": "customer|pelanggan|call center|contact center",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 201,
+      "total": 176,
+      "titles": [
+        "CUSTOMER SERVICE",
+        "Customer Service",
+        "Customer Service",
+        "Customer Service",
+        "CUSTOMER SERVICE"
+      ]
+    },
+    {
+      "query": "answering customer questions and handling complaints",
+      "title": "customer|pelanggan|call center|contact center",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 247,
+      "total": 76,
+      "titles": [
+        "CUSTOMER SERVICE",
+        "E-Commerce Customer Support Staff",
+        "Customer Experience Intern",
+        "E-Commerce Resolution Support Staff",
+        "Digital Non-retail Customer Resolution Intern"
+      ]
+    },
+    {
+      "query": "Video Editor",
+      "title": "video|editor|multimedia|content creator",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 169,
+      "total": 153,
+      "titles": [
+        "Video Editor",
+        "Video Editor",
+        "Video Editor",
+        "Video Editor",
+        "Video Editor"
+      ]
+    },
+    {
+      "query": "mengedit video dan membuat konten audiovisual",
+      "title": "video|editor|multimedia|content creator",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 289,
+      "total": 200,
+      "titles": [
+        "Video Editor",
+        "Video Editor",
+        "Video Editor Intern",
+        "Video Editor",
+        "Video Editing Intern"
+      ]
+    },
+    {
+      "query": "Teknik Sipil",
+      "title": "sipil|civil|konstruksi|construction|arsitek",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 232,
+      "total": 1232,
+      "titles": [
+        "Teknik Sipil",
+        "Teknik Sipil",
+        "TEKNIK SIPIL",
+        "Teknik Sipil",
+        "Teknik Sipil"
+      ]
+    },
+    {
+      "query": "assisting civil engineering and building construction projects",
+      "title": "sipil|civil|konstruksi|construction|arsitek",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 246,
+      "total": 200,
+      "titles": [
+        "Civil Project Support",
+        "Civil Engineering Intern",
+        "Civil Engineering Intern",
+        "Construction Engineering (Laki-Laki)",
+        "Civil Engineering Intern"
+      ]
+    },
+    {
+      "query": "Administrasi",
+      "title": "admin|arsip|sekretaris|secretary",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 375,
+      "total": 11469,
+      "titles": [
+        "ADMINISTRASI",
+        "ADMINISTRASI",
+        "Administrasi",
+        "Administrasi",
+        "Administrasi"
+      ]
+    },
+    {
+      "query": "mengelola surat dokumen dan pengarsipan kantor",
+      "title": "admin|arsip|sekretaris|secretary",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 241,
+      "total": 211,
+      "titles": [
+        "Administrasi Perkantoran",
+        "Admin - Maintenance",
+        "Business Administration & Office Management Intern",
+        "Pengadministrasian Umum",
+        "General Administration Intern"
+      ]
+    },
+    {
+      "query": "Pertanian",
+      "title": "pertanian|agro|kebun|agricultur|tanaman",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 205,
+      "total": 599,
+      "titles": [
+        "Fasilitator Budidaya Pertanian & Hidroponik (Ketahanan Pangan)",
+        "Penyuluh Pertanian",
+        "Analis Budidaya dan Produk Unggulan Pertanian",
+        "Asisten Periset Teknologi Proses Diversifikasi Produk Pertanian 1",
+        "PENGELOLA KEGIATAN KERJA BIDANG PERTANIAN"
+      ]
+    },
+    {
+      "query": "membantu budidaya tanaman dan kegiatan perkebunan",
+      "title": "pertanian|agro|kebun|agricultur|tanaman",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 227,
+      "total": 200,
+      "titles": [
+        "Admin Tanaman",
+        "Admin Administrasi Tanaman",
+        "Asisten Periset Budidaya dan Teknologi Tanaman Perkebunan - Sub Riset Lapangan dan Preparasi Sample Laboratorium",
+        "Asisten Periset budidaya dan Teknologi Tanaman Perkebunan - Sub Riset Laboratorium dan Rumah Kaca",
+        "Internship - Dep. Riset Bag. Fungsional Peneliti"
+      ]
+    },
+    {
+      "query": "Laboratorium",
+      "title": "laboratorium|laboratory|laboran|lab analyst",
+      "split": "calibration",
+      "hitAt5": true,
+      "keywordHitAt5": true,
+      "elapsedMs": 216,
+      "total": 568,
+      "titles": [
+        "Laboratorium",
+        "Laboratorium",
+        "Laboratorium",
+        "Laboratorium",
+        "Ahli Teknologi Laboratorium Medik (ATLM)"
+      ]
+    },
+    {
+      "query": "preparing laboratory samples and assisting laboratory tests",
+      "title": "laboratorium|laboratory|laboran|lab analyst",
+      "split": "evaluation",
+      "hitAt5": true,
+      "keywordHitAt5": false,
+      "elapsedMs": 182,
+      "total": 200,
+      "titles": [
+        "Laboratorium Analist & Administration Intern",
+        "Analis Laboratorium",
+        "Asisten Laboratorium",
+        "Laboratory Intern",
+        "Magang Ahli Teknologi Laboratorium Medik"
+      ]
+    }
+  ],
+  "negatives": [
+    {
+      "query": "zxqv984729tidakadalowongan",
+      "total": 30,
+      "titles": [
+        "Admin HR",
+        "OTAA Management Office Intern",
+        "Accounting Staff",
+        "IT STAFF",
+        "Logistic/Warehouse"
+      ]
+    },
+    {
+      "query": "merawat dinosaurus hidup di planet Mars",
+      "total": 2,
+      "titles": [
+        "Asisten Periset Arkeobotani",
+        "Asisten Periset Sedimen dan Mikropaleontologi terapan"
+      ]
+    },
+    {
+      "query": "pilot kapal antariksa menuju galaksi Andromeda",
+      "total": 0,
+      "titles": []
+    }
+  ]
+}

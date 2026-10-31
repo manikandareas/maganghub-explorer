@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  outputFileTracingIncludes: {
-    "/*": ["./data-*.js"],
-  },
   turbopack: {
     root: process.cwd(),
     rules: {

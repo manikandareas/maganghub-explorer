@@ -1,0 +1,124 @@
+
+> maganghub-explorer@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ embedding output is reordered by index and rejects missing, duplicate, non-finite and zero vectors (1.200916ms)
+✔ embedding requests preserve model and dimensions, and never retry authentication failures (22.91825ms)
+✔ FTS preserves programming languages and embedding identities include dimensions (0.655125ms)
+✔ short technical terms never match parts of unrelated words (2.055167ms)
+✔ normalization keeps meaningful programming language tokens (0.1245ms)
+✔ punctuation, Unicode variants, and compound role names normalize consistently (0.426625ms)
+✔ exact title outranks phrase, then all title tokens, then description (1.371375ms)
+✔ a matching organization ranks above an incidental description mention (0.110583ms)
+✔ empty searches keep portal order; punctuation-only searches match nothing (0.083125ms)
+✔ matches existing HTML behavior: {} (408.51025ms)
+✔ matches existing HTML behavior: {"cat":"ai"} (3.600042ms)
+✔ matches existing HTML behavior: {"cat":"data"} (2.301625ms)
+✔ matches existing HTML behavior: {"cat":"dev"} (1.398583ms)
+✔ matches existing HTML behavior: {"cat":"it"} (1.171125ms)
+✔ matches existing HTML behavior: {"cat":"lain"} (4.79025ms)
+✔ matches existing HTML behavior: {"prov":"1"} (3.663042ms)
+✔ matches existing HTML behavior: {"city":"0"} (2.563959ms)
+✔ matches existing HTML behavior: {"org":"0"} (5.612875ms)
+✔ matches existing HTML behavior: {"org":"1"} (2.888333ms)
+✔ matches existing HTML behavior: {"edu":"1"} (5.463083ms)
+✔ matches existing HTML behavior: {"edu":"2"} (8.014667ms)
+✔ matches existing HTML behavior: {"edu":"4"} (2.509833ms)
+✔ matches existing HTML behavior: {"interview":"1"} (6.013334ms)
+✔ matches existing HTML behavior: {"interview":"2"} (4.435542ms)
+✔ matches existing HTML behavior: {"disability":true} (4.04575ms)
+✔ matches existing HTML behavior: {"minQuota":"20"} (3.098458ms)
+✔ matches existing HTML behavior: {"sort":"score"} (14.972208ms)
+✔ matches existing HTML behavior: {"sort":"quota"} (8.160792ms)
+✔ matches existing HTML behavior: {"sort":"appl"} (11.9925ms)
+✔ matches existing HTML behavior: {"sort":"az"} (45.755667ms)
+✔ matches existing HTML behavior: {"cat":"dev","edu":"2","interview":"1","disability":true,"minQuota":"2","sort":"quota"} (1.797583ms)
+✔ matches existing HTML behavior: {"prov":"1","city":"1","org":"0","edu":"2"} (1.967709ms)
+✔ matches existing HTML behavior: {"q":"tidak-ada-lowongan-xyz987"} (68.010875ms)
+✔ AI engineer excludes the four substring false positives from the audit (3.1705ms)
+✔ exact AI Engineer titles come first, followed by phrase and title matches (101.266125ms)
+✔ search normalizes case, spacing, quotes, and frontend separators (175.685583ms)
+✔ search still covers descriptions, programs, organizations, and locations with AND semantics (7.955958ms)
+✔ relevance search retains filters, page boundaries, and explicit sorting (69.086583ms)
+✔ snapshot has complete, consistent location and category counts (0.335625ms)
+✔ pagination has no gaps, clamps invalid pages, and sorting preserves portal order (19.502792ms)
+✔ education and interview bitmasks include combined eligibility (6.422833ms)
+✔ bookmarks only return saved IDs and still respect active filters (6.980166ms)
+✔ URL state roundtrips, preserves index zero, and rejects malformed parameters (0.412542ms)
+✔ details preserve original content, hide unresolved snapshot references, and link to the official portal (1.078167ms)
+✔ public filters accept stable location values, keep zero-valued legacy codes, and reject invalid input (424.909125ms)
+✔ OpenAPI documents the implemented parameters and JSON response fields (0.6045ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 46
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1325.12175
+
+> maganghub-explorer@0.1.0 test:integration
+> tsx --test tests/integration/*.test.ts
+
+✔ SQL keyword search matches snapshot filters, explicit sort, token normalization and ranking (2492.639041ms)
+✔ pending snapshot cannot be activated before all documents and embeddings exist (43.797334ms)
+✔ semantic candidates obey filters before selection and pagination stays stable (227.587583ms)
+✔ durable rate buckets reject excess requests and stay scoped to the caller (156.408333ms)
+✔ API rate errors return CORS, structured error, Retry-After and no shared caching (47.947917ms)
+✔ missing semantic provider falls back to keyword with explicit metadata (268.796709ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4726.287125
+
+> maganghub-explorer@0.1.0 typecheck
+> tsc --noEmit
+
+
+> maganghub-explorer@0.1.0 lint
+> eslint
+
+
+> maganghub-explorer@0.1.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+- Environments: .env
+✓ Running next.config.ts took 159ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1423ms
+  Running TypeScript ...
+  Finished TypeScript in 1268ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+✓ Generating static pages using 7 workers (12/12) in 154ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /api-docs
+├ ƒ /api/jobs
+├ ƒ /api/v1/facets
+├ ƒ /api/v1/jobs
+├ ƒ /api/v1/jobs/[id]
+├ ○ /icon.svg
+├ ƒ /llm.txt
+├ ○ /llms.txt
+├ ƒ /lowongan/[id]
+├ ƒ /openapi.json
+├ ○ /robots.txt
+└ ƒ /sitemap.xml
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

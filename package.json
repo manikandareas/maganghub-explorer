@@ -8,9 +8,21 @@
     "start": "next start",
     "lint": "eslint",
     "test": "tsx --test tests/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "catalog:import": "tsx scripts/import-catalog.ts",
+    "catalog:backfill": "tsx scripts/backfill.ts",
+    "catalog:activate": "tsx scripts/activate-catalog.ts",
+    "catalog:status": "tsx scripts/catalog-status.ts",
+    "catalog:maintenance": "tsx scripts/maintenance.ts",
+    "catalog:classify": "tsx scripts/classify-catalog.ts",
+    "catalog:pilot": "tsx scripts/pilot-embeddings.ts",
+    "catalog:evaluate": "tsx scripts/evaluate-search.ts",
+    "test:api": "tsx scripts/verify-api.ts",
+    "test:integration": "tsx --test tests/integration/*.test.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "@radix-ui/react-icons": "^1.3.2",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.1.1",

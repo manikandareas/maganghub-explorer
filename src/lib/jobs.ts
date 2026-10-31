@@ -1,42 +1,18 @@
-import { readFileSync } from "node:fs";
-import path from "node:path";
+import { readSnapshot, type SnapshotRow as Row } from "./snapshot";
 import { CATEGORIES, type Category, type Facets, type Filters, type Job, type JobDetail, type SearchResult } from "./job-types";
 import { createSearchDocument, createSearchQuery, rankSearch } from "./job-search";
+import { categoryOf } from "./job-categories";
+export { categoryOf } from "./job-categories";
 
 // The existing snapshot format, preserved as the single source of truth.
-type Row = [string, string, string, number, number, number, number, number, number, string, number, number, number, string, string, number];
-type Snapshot = { cities: string[]; provs: string[]; prodis: string[]; rows: Row[] };
 type IndexedRow = { row: Row; category: Category; search: ReturnType<typeof createSearchDocument> };
-
-const CATEGORY_PATTERNS: [Category, RegExp][] = [
-  ["ai", /\b(ai engineer|machine learning|artificial intelligence|deep learning|data scientist|computer vision|nlp|programmer ai|ai\/ml|ml engineer)\b/],
-  ["data", /\b(data analyst|data engineer|analis data|data analis|business intelligence|data support|pengolah data|data entry|data science)\b/],
-  ["dev", /\b(software|developer|programmer|frontend|front[ -]?end|backend|back[ -]?end|fullstack|full[ -]?stack|web|mobile|android|devops|quality assurance|tester|system analyst|sistem analis|aplikasi|perangkat lunak|database|cloud|game|ui\/ux|ux|programer)\b/],
-  ["it", /\b(it support|technical support|helpdesk|network|jaringan|staff it|it staff|teknisi komputer|sysadmin|system administrator|teknologi informasi|informatika|sistem informasi|it officer|it admin|support it)\b/],
-];
-
-export function categoryOf(title: string): Category {
-  return CATEGORY_PATTERNS.find(([, pattern]) => pattern.test(title.toLowerCase()))?.[0] ?? "lain";
-}
 
 const EDUCATION = [[1, "Diploma"], [2, "Sarjana"], [4, "Profesi"]] as const;
 const INTERVIEW = [[1, "Daring"], [2, "Tatap muka"]] as const;
 const PAGE_SIZE = 12;
 
 function loadCatalog() {
-  const snapshot: Snapshot = { cities: [], provs: [], prodis: [], rows: [] };
-  for (let part = 1; part <= 4; part++) {
-    const source = readFileSync(path.join(process.cwd(), `data-${part}.js`), "utf8");
-    const start = source.indexOf("var _p=") + "var _p=".length;
-    const end = source.lastIndexOf(";if(_p.cities)");
-    if (start < "var _p=".length || end < start) throw new Error(`Format snapshot data-${part}.js tidak valid`);
-    // Parse JSON only. Never execute the JavaScript snapshot on the server.
-    const chunk = JSON.parse(source.slice(start, end)) as Partial<Snapshot>;
-    if (chunk.cities) snapshot.cities = chunk.cities;
-    if (chunk.provs) snapshot.provs = chunk.provs;
-    if (chunk.prodis) snapshot.prodis = chunk.prodis;
-    if (chunk.rows) snapshot.rows.push(...chunk.rows);
-  }
+  const snapshot = readSnapshot();
   const cityProvince = new Map<number, number>();
   const provinceCounts = new Map<number, number>();
   const cityCounts = new Map<number, number>();

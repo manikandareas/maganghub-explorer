@@ -12,6 +12,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Skeleton } from "@/components/ui/skeleton";
 import { JobFilters } from "@/components/job-filters";
 import { JobCard } from "@/components/job-card";
+import { CopyForAgentButton } from "@/components/copy-for-agent-button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { useSavedJobs } from "@/hooks/use-saved-jobs";
@@ -101,9 +102,10 @@ export function Explorer({ facets, initialFilters, initialResult }: { facets: Fa
         </div><Popover><PopoverTrigger asChild><Button variant="ghost" className="data-info">Data 31 Okt 2026<InfoCircledIcon /></Button></PopoverTrigger>
           <PopoverContent align="end" className="text-xs leading-relaxed">Data tersimpan per 31 Oktober 2026. Kuota dan pelamar dapat berubah. Batas pelamaran pada snapshot: 4 November 2026. Cek ketersediaan di portal resmi.</PopoverContent>
         </Popover></div>
+        <div className="hero-agent-action"><CopyForAgentButton /></div>
         <form className="search-form" role="search" onSubmit={event => { event.preventDefault(); searchRef.current?.blur(); resultsRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }); }}>
           <MagnifyingGlassIcon className="search-icon" /><label htmlFor="job-search" className="sr-only">Cari lowongan</label>
-          <Input ref={searchRef} id="job-search" type="search" autoComplete="off" placeholder="Cari posisi atau perusahaan" value={filters.q} onChange={event => update({ q: event.target.value.slice(0, 250) })} />
+          <Input ref={searchRef} id="job-search" type="search" autoComplete="off" placeholder="Cari posisi, perusahaan, atau keahlian" value={filters.q} onChange={event => update({ q: event.target.value.slice(0, 250) })} />
           <Button type="submit" className="search-submit">Cari <ArrowRightIcon /></Button>
         </form>
       </div></section>
@@ -123,6 +125,7 @@ export function Explorer({ facets, initialFilters, initialResult }: { facets: Fa
             <Select value={filters.sort} onValueChange={sort => update({ sort: sort as Sort })}><SelectTrigger id="sort-jobs" className="sort-select" aria-label="Urutkan lowongan"><SelectValue>{SORT_OPTIONS.find(option => option.value === filters.sort)?.label ?? "Urutkan"}</SelectValue></SelectTrigger><SelectContent position="popper" align="end">{filters.sort !== "relevance" ? <SelectItem value="relevance">Reset urutan</SelectItem> : null}{SORT_OPTIONS.map(option => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select>
           </div></div>
           {chips.length ? <div className="active-filters" aria-label="Filter aktif">{chips.map(chip => <Badge variant="secondary" key={chip.key} asChild><button type="button" onClick={() => update(chip.reset)} aria-label={`Hapus filter ${chip.label}`}>{chip.label}<Cross2Icon className="size-3" /></button></Badge>)}<button type="button" className="clear-filters" onClick={reset}>Hapus semua</button></div> : null}
+          {!pending && data.meta?.fallbackReason ? <p className="mb-4 text-sm text-muted-foreground" role="status">Pencarian makna sementara tidak tersedia. Hasil menggunakan kata kunci.</p> : null}
           {error ? <div className="empty-state" role="alert"><InfoCircledIcon /><h3>Lowongan belum bisa dimuat</h3><p>Periksa koneksi, lalu coba lagi.</p><Button variant="outline" onClick={() => mutate()}><UpdateIcon />Coba lagi</Button></div> : pending ?
             <div className="job-grid" aria-busy="true" aria-label="Memuat hasil pencarian">{[0, 1, 2, 3, 4, 5].map(i => <Skeleton key={i} className="h-64 rounded-lg" />)}</div> : data.total === 0 ?
             <div className="empty-state">{filters.saved ? <BookmarkIcon /> : <MagnifyingGlassIcon />}<h3>{filters.saved && !ids.length ? "Belum ada lowongan tersimpan" : "Tidak ada lowongan yang cocok"}</h3><p>{filters.saved && !ids.length ? "Klik ikon simpan pada lowongan untuk melihatnya di sini." : "Coba kata kunci lain atau kurangi filter."}</p><Button variant="outline" onClick={filters.saved && !ids.length ? () => update({ ...DEFAULT_FILTERS }) : chips.length ? reset : () => update({ q: "" })}>{filters.saved && !ids.length ? "Cari lowongan" : chips.length ? "Hapus filter" : "Hapus pencarian"}<ArrowRightIcon /></Button></div>
