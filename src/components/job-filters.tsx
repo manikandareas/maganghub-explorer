@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { CheckIcon, ChevronDownIcon, MixerHorizontalIcon, ResetIcon } from "@radix-ui/react-icons";
+import { CheckIcon, ChevronDownIcon, MixerHorizontalIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { formatNumber, type Facets, type Filters, type Option } from "@/lib/job-types";
+import { type Facets, type Filters, type Option } from "@/lib/job-types";
 import { cn } from "@/lib/utils";
 
 export function SearchableSelect({ label, placeholder, options, value, onChange }: {
@@ -35,7 +35,7 @@ export function SearchableSelect({ label, placeholder, options, value, onChange 
             </CommandItem>
               {options.map(option => <CommandItem key={option.value} value={`${option.label} ${option.value}`} onSelect={() => { onChange(option.value); setOpen(false); }}>
                 <CheckIcon className={cn("size-4 shrink-0", option.value !== value && "opacity-0")} />
-                <span>{option.label}</span><span className="ml-auto pl-3 text-xs text-muted-foreground tabular-nums">{option.count !== undefined ? formatNumber(option.count) : ""}</span>
+                <span>{option.label}</span>
               </CommandItem>)}
             </CommandGroup>
           </CommandList>
@@ -62,27 +62,25 @@ export function JobFilters({ filters, facets, onChange, onReset }: {
 }) {
   const id = useId();
   const cities = facets.cities.filter(city => !filters.prov || city.province === filters.prov);
+  const advancedCount = Number(Boolean(filters.interview)) + Number(Number(filters.minQuota) > 0) + Number(filters.disability);
+  const hasFilters = Boolean(filters.cat || filters.prov || filters.city || filters.edu || filters.org || advancedCount);
   return <div className="filter-panel">
-    <div className="filter-panel-heading"><h2><MixerHorizontalIcon />Filter lowongan</h2><Button variant="ghost" size="sm" onClick={onReset} className="reset-button"><ResetIcon />Reset</Button></div>
-    <Separator />
-    <div className="filter-section"><h3>Bidang pekerjaan</h3>
-      <div className="category-options"><button type="button" className={cn("category-option", !filters.cat && "selected")} aria-pressed={!filters.cat} onClick={() => onChange({ cat: "" })}><span>Semua bidang</span><span>{formatNumber(facets.total)}</span></button>
-        {facets.categories.map(category => <button type="button" key={category.value} className={cn("category-option", filters.cat === category.value && "selected")} aria-pressed={filters.cat === category.value} onClick={() => onChange({ cat: filters.cat === category.value ? "" : category.value })}><span>{category.label}</span><span>{formatNumber(category.count ?? 0)}</span></button>)}
-      </div>
-    </div>
-    <Separator />
-    <div className="filter-section space-y-4"><h3>Lokasi penempatan</h3>
+    <div className="filter-panel-heading"><h2><MixerHorizontalIcon />Filter</h2>{hasFilters ? <Button variant="ghost" size="sm" onClick={onReset} className="reset-button">Reset</Button> : null}</div>
+    <div className="filter-section space-y-4">
+      <FilterSelect label="Bidang" placeholder="Semua bidang" value={filters.cat} options={facets.categories} onChange={cat => onChange({ cat })} />
       <SearchableSelect label="Provinsi" placeholder="Semua provinsi" value={filters.prov} options={facets.provinces} onChange={prov => onChange({ prov, city: "" })} />
       <SearchableSelect label="Kota / kabupaten" placeholder="Semua kota / kabupaten" value={filters.city} options={cities} onChange={city => onChange({ city })} />
+      <FilterSelect label="Jenjang pendidikan" placeholder="Semua jenjang" value={filters.edu} options={[{ value: "1", label: "Diploma" }, { value: "2", label: "Sarjana" }, { value: "4", label: "Profesi" }]} onChange={edu => onChange({ edu })} />
+      <FilterSelect label="Penyelenggara" placeholder="Semua penyelenggara" value={filters.org} options={[{ value: "0", label: "Perusahaan" }, { value: "1", label: "Instansi pemerintah" }]} onChange={org => onChange({ org })} />
     </div>
     <Separator />
-    <div className="filter-section space-y-4"><h3>Kriteria lowongan</h3>
-      <FilterSelect label="Penyelenggara" placeholder="Semua penyelenggara" value={filters.org} options={[{ value: "0", label: "Perusahaan" }, { value: "1", label: "Instansi pemerintah" }]} onChange={org => onChange({ org })} />
-      <FilterSelect label="Jenjang pendidikan" placeholder="Semua jenjang" value={filters.edu} options={[{ value: "1", label: "Diploma" }, { value: "2", label: "Sarjana" }, { value: "4", label: "Profesi" }]} onChange={edu => onChange({ edu })} />
-      <FilterSelect label="Tipe wawancara" placeholder="Semua tipe wawancara" value={filters.interview} options={[{ value: "1", label: "Daring (online)" }, { value: "2", label: "Tatap muka" }]} onChange={interview => onChange({ interview })} />
+    <details className="advanced-filters" open={advancedCount > 0 || undefined}>
+      <summary><span>Filter lainnya{advancedCount ? <span className="filter-count">{advancedCount}</span> : null}</span><ChevronDownIcon /></summary>
+      <div className="filter-section space-y-4">
+      <FilterSelect label="Wawancara" placeholder="Semua tipe" value={filters.interview} options={[{ value: "1", label: "Daring" }, { value: "2", label: "Tatap muka" }]} onChange={interview => onChange({ interview })} />
       <div className="filter-field"><label htmlFor={`${id}-quota`}>Kuota minimal</label><div className="quota-input"><Input id={`${id}-quota`} inputMode="numeric" type="number" min={0} max={1000000} placeholder="0" value={filters.minQuota} onChange={event => onChange({ minQuota: event.target.value === "" ? "" : String(Math.max(0, Math.min(1000000, Number(event.target.value) || 0))) })} /><span>peserta</span></div></div>
-      <div className="disability-filter"><Checkbox id={`${id}-disability`} checked={filters.disability} onCheckedChange={checked => onChange({ disability: checked === true })} /><label htmlFor={`${id}-disability`}>Ramah disabilitas<span>Hanya tampilkan lowongan inklusif</span></label></div>
-    </div>
-    <p className="filter-note">Wawancara daring mengacu pada proses seleksi, bukan sistem kerja WFH.</p>
+      <div className="disability-filter"><Checkbox id={`${id}-disability`} checked={filters.disability} onCheckedChange={checked => onChange({ disability: checked === true })} /><label htmlFor={`${id}-disability`}>Ramah disabilitas</label></div>
+      </div>
+    </details>
   </div>;
 }

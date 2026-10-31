@@ -7,7 +7,7 @@ export const CATEGORIES = [
 ] as const;
 
 export const SORT_OPTIONS = [
-  { value: "portal", label: "Rekomendasi portal" },
+  { value: "portal", label: "Urutan portal" },
   { value: "score", label: "Skor peluang tertinggi" },
   { value: "quota", label: "Kuota terbanyak" },
   { value: "appl", label: "Pelamar tersedikit" },
@@ -15,7 +15,7 @@ export const SORT_OPTIONS = [
 ] as const;
 
 export type Category = (typeof CATEGORIES)[number]["value"];
-export type Sort = (typeof SORT_OPTIONS)[number]["value"];
+export type Sort = (typeof SORT_OPTIONS)[number]["value"] | "relevance";
 
 export type Filters = {
   q: string;
@@ -34,7 +34,7 @@ export type Filters = {
 
 export const DEFAULT_FILTERS: Filters = {
   q: "", cat: "", prov: "", city: "", org: "", edu: "", interview: "",
-  minQuota: "", disability: false, saved: false, sort: "portal", page: 1,
+  minQuota: "", disability: false, saved: false, sort: "relevance", page: 1,
 };
 
 export type Job = {
@@ -81,7 +81,7 @@ export function parseFilters(params: URLSearchParams): Filters {
     interview: oneOf("interview", ["1", "2"]),
     minQuota: integer("minQuota", 1000000),
     disability: params.get("disability") === "1", saved: params.get("saved") === "1",
-    sort: (oneOf("sort", SORT_OPTIONS.map(s => s.value)) || "portal") as Sort,
+    sort: (oneOf("sort", ["relevance", ...SORT_OPTIONS.map(s => s.value)]) || "relevance") as Sort,
     page: Math.max(1, Math.min(100000, Number(integer("page", 100000)) || 1)),
   };
 }

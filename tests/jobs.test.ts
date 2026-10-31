@@ -5,7 +5,8 @@ import vm from "node:vm";
 import { getFacets, getJob, searchJobs } from "../src/lib/jobs";
 import { DEFAULT_FILTERS, filterParams, parseFilters, type Filters } from "../src/lib/job-types";
 
-// Use the previous working explorer as an independent behavioral oracle.
+// Keep legacy comparison for structured filters and explicit sort modes only.
+// Search relevance is specified by the regression tests below.
 const context = vm.createContext({ window: {}, document: { getElementById: () => ({ addEventListener() {} }) } });
 for (let part = 1; part <= 4; part++) vm.runInContext(readFileSync(`data-${part}.js`, "utf8"), context);
 const original = readFileSync("app.js", "utf8");
@@ -18,9 +19,7 @@ globalThis.reference = (input) => {
 };`, context);
 
 const cases: Partial<Filters>[] = [
-  {}, { q: "Data analyst" }, { q: "frontend" }, { q: "rumah sakit" },
-  { q: "samarinda" }, { q: "teknik informatika" }, { q: "pelayanan pasien" },
-  { q: "  DATA   ANALYST  " }, { cat: "ai" }, { cat: "data" }, { cat: "dev" },
+  {}, { cat: "ai" }, { cat: "data" }, { cat: "dev" },
   { cat: "it" }, { cat: "lain" }, { prov: "1" }, { city: "0" },
   { org: "0" }, { org: "1" }, { edu: "1" }, { edu: "2" }, { edu: "4" },
   { interview: "1" }, { interview: "2" }, { disability: true }, { minQuota: "20" },
@@ -39,6 +38,52 @@ for (const patch of cases) {
     assert.deepEqual(actual.jobs.map(job => job.id), expected.slice(0, actual.pageSize));
   });
 }
+
+test("AI engineer excludes the four substring false positives from the audit", () => {
+  const ids = [
+    "01a0e55b-dc88-7164-bf6e-fbe370e54c00", // Assisten Produksi
+    "01a152d4-8dc7-735c-856e-a1e57662dd97", // Engineering Maintenance
+    "01a1635a-33f5-721a-b9ce-732085322378", // Workshop Engineering Site Intern
+    "01a13f19-f331-70ac-9a09-7b70de7b8a93", // Engineer Project
+  ];
+  assert.equal(searchJobs({ ...DEFAULT_FILTERS, q: "ai engineer", saved: true }, ids).total, 0);
+});
+
+test("exact AI Engineer titles come first, followed by phrase and title matches", () => {
+  const first = searchJobs({ ...DEFAULT_FILTERS, q: "ai engineer" });
+  assert.equal(first.jobs.slice(0, 4).filter(job => job.title.toLowerCase() === "ai engineer").length, 4);
+  assert.ok(first.jobs.every(job => /\bai\b/i.test(job.title) && /engineer/i.test(job.title)));
+  const all = Array.from({ length: first.pages }, (_, i) => searchJobs({ ...DEFAULT_FILTERS, q: "ai engineer", page: i + 1 }).jobs).flat();
+  assert.ok(all.some(job => job.title === "AI/ML Engineer Intern"));
+  assert.ok(all.some(job => job.title === "AI Engineer_RSB Witel Sumalut"));
+});
+
+test("search normalizes case, spacing, quotes, and frontend separators", () => {
+  const ids = (q: string) => searchJobs({ ...DEFAULT_FILTERS, q }).jobs.map(job => job.id);
+  assert.deepEqual(ids("  AI   ENGINEER  "), ids("ai engineer"));
+  assert.deepEqual(ids('"ai engineer"'), ids("ai engineer"));
+  assert.deepEqual(ids("front-end"), ids("frontend"));
+  assert.deepEqual(ids("front end"), ids("frontend"));
+});
+
+test("search still covers descriptions, programs, organizations, and locations with AND semantics", () => {
+  const id = "01a167a9-c96f-730b-9053-1b29f6c5eaff";
+  for (const q of ["pelayanan pasien", "ilmu keperawatan", "awal bros", "pekanbaru riau"])
+    assert.equal(searchJobs({ ...DEFAULT_FILTERS, saved: true, q }, [id]).total, 1, q);
+  assert.equal(searchJobs({ ...DEFAULT_FILTERS, saved: true, q: "perawat software" }, [id]).total, 0);
+  assert.equal(searchJobs({ ...DEFAULT_FILTERS, q: "???" }).total, 0);
+});
+
+test("relevance search retains filters, page boundaries, and explicit sorting", () => {
+  const filters = { ...DEFAULT_FILTERS, q: "ai engineer", edu: "2", interview: "1", sort: "quota" as const };
+  const result = searchJobs(filters);
+  assert.ok(result.total > 0);
+  assert.ok(result.jobs.every(job => job.education.includes("Sarjana") && job.interview.includes("Daring")));
+  assert.ok(result.jobs.every((job, i) => i === 0 || result.jobs[i - 1].quota >= job.quota));
+  const first = searchJobs({ ...DEFAULT_FILTERS, q: "ai engineer" });
+  const next = searchJobs({ ...DEFAULT_FILTERS, q: "ai engineer", page: 2 });
+  assert.ok(next.jobs.every(job => !first.jobs.some(previous => previous.id === job.id)));
+});
 
 test("snapshot has complete, consistent location and category counts", () => {
   const facets = getFacets();

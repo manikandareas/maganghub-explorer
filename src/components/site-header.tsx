@@ -23,7 +23,7 @@ export function SiteHeader({ saved = false, onNavigate }: { saved?: boolean; onN
           onClick={onNavigate ? e => { e.preventDefault(); onNavigate(false); } : undefined}>Eksplorasi</Link>
         <Link href="/?saved=1" className={cn("nav-link", saved && "active")} aria-current={saved ? "page" : undefined}
           onClick={onNavigate ? e => { e.preventDefault(); onNavigate(true); } : undefined}>
-          <BookmarkIcon className="size-4" /><span>Tersimpan</span><span className="saved-count">{ids.length}</span>
+          <BookmarkIcon className="size-4" /><span>Tersimpan</span>{ids.length ? <span className="saved-count">{ids.length}</span> : null}
         </Link>
       </nav>
       <Button variant="outline" size="sm" asChild className="official-link">

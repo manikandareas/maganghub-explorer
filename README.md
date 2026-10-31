@@ -22,13 +22,13 @@ Tidak memerlukan database, API key, atau environment variable.
 
 ## Fitur
 
-- Pencarian posisi, penyelenggara, deskripsi, program studi, dan lokasi; pencarian beberapa kata menggunakan logika AND, sama seperti HTML awal.
+- Pencarian kata utuh pada posisi, penyelenggara, deskripsi, program studi, dan lokasi dengan logika AND. Singkatan seperti AI/IT/UI tidak cocok dengan potongan kata lain. Penulisan frontend/front-end/front end dinormalisasi.
 - Filter kategori, provinsi, kota/kabupaten, jenis penyelenggara, jenjang pendidikan, tipe wawancara, kuota minimal, dan ramah disabilitas.
-- Lima urutan: urutan portal, skor peluang, kuota, jumlah pelamar, dan nama posisi.
+- Urutan awal pencarian berdasarkan relevansi: judul persis, frasa pada judul, semua kata pada judul, kemudian kecocokan di bagian lain. Tanpa kata kunci, urutan portal dipertahankan. Urutan portal, skor peluang, kuota, jumlah pelamar, dan nama posisi tetap dapat dipilih secara eksplisit.
 - Filter kota mengikuti provinsi. Filter, kata kunci, urutan, dan halaman tersimpan dalam URL dan dapat dibagikan.
 - Pagination 12 lowongan per halaman, halaman detail, salin tautan, dan tautan melamar ke portal resmi.
 - Simpan hingga 200 lowongan di localStorage perangkat, tanpa akun. Tab tersimpan tetap mendukung filter dan pencarian.
-- Panel filter desktop dan drawer mobile; akses keyboard, label formulir, reduced motion, status hasil, serta kondisi kosong/error.
+- Panel filter desktop sticky dengan scroll tersendiri dan drawer mobile. Kriteria tambahan berada di "Filter lainnya" dan terbuka otomatis jika ada filter lanjutan aktif. Reset filter mempertahankan kata kunci. Hasil lama diganti skeleton ketika pencarian baru belum selesai.
 
 ## Data
 
@@ -49,7 +49,7 @@ npm run lint
 npm run build
 ```
 
-Pengujian membandingkan hasil filter dan urutan terhadap implementasi HTML asli, serta memeriksa bitmask pendidikan/wawancara, pagination, bookmark, validasi URL, dan detail lowongan.
+Pengujian membandingkan filter terstruktur dan urutan eksplisit terhadap HTML asli. Pencarian mempunyai regresi tersendiri untuk kasus AI Engineer, batas token, normalisasi, relevansi judul, field lain, dan kombinasi filter; perilaku substring HTML lama sengaja diganti. Pengujian juga mencakup bitmask pendidikan/wawancara, pagination, bookmark, validasi URL, dan detail lowongan.
 
 ## Struktur
 
@@ -59,6 +59,7 @@ Pengujian membandingkan hasil filter dan urutan terhadap implementasi HTML asli,
 - `src/app/globals.css`: token tema shadcn dan layout responsif.
 - `src/lib/job-types.ts`: kontrak data dan serialisasi filter URL.
 - `src/lib/jobs.ts`: parser snapshot, indeks, filter, dan pengurutan server.
+- `src/lib/job-search.ts`: normalisasi token dan peringkat relevansi pencarian.
 - `tests/jobs.test.ts`: pembanding perilaku HTML awal dan pengujian data.
 
 Instalasi mengikuti [dokumentasi Next.js](https://nextjs.org/docs/app/getting-started/installation) dan [shadcn/ui](https://ui.shadcn.com/docs/installation/next).

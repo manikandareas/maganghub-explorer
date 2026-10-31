@@ -1,11 +1,12 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { CATEGORIES, type Category, type Facets, type Filters, type Job, type JobDetail, type SearchResult } from "./job-types";
+import { createSearchDocument, createSearchQuery, rankSearch } from "./job-search";
 
 // The existing snapshot format, preserved as the single source of truth.
 type Row = [string, string, string, number, number, number, number, number, number, string, number, number, number, string, string, number];
 type Snapshot = { cities: string[]; provs: string[]; prodis: string[]; rows: Row[] };
-type IndexedRow = { row: Row; category: Category; search: string };
+type IndexedRow = { row: Row; category: Category; search: ReturnType<typeof createSearchDocument> };
 
 const CATEGORY_PATTERNS: [Category, RegExp][] = [
   ["ai", /\b(ai engineer|machine learning|artificial intelligence|deep learning|data scientist|computer vision|nlp|programmer ai|ai\/ml|ml engineer)\b/],
@@ -49,7 +50,8 @@ function loadCatalog() {
     categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
     byId.set(row[0], row);
     const programs = row[9].split(",").filter(Boolean).map(i => snapshot.prodis[Number(i)]).join(" ");
-    return { row, category, search: [row[1], row[2], snapshot.cities[row[4]], snapshot.provs[row[5]], programs, row[13]].join(" ").toLowerCase() };
+    const search = createSearchDocument({ title: row[1], organization: row[2], location: `${snapshot.cities[row[4]]} ${snapshot.provs[row[5]]}`, programs, description: row[13] });
+    return { row, category, search };
   });
   const facets: Facets = {
     total: index.length,
@@ -89,9 +91,9 @@ export function getJob(id: string): JobDetail | null {
 }
 
 export function searchJobs(filters: Filters, savedIds: string[] = []): SearchResult {
-  const terms = filters.q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const query = createSearchQuery(filters.q);
   const saved = new Set(savedIds);
-  const results = getCatalog().index.filter(({ row, category, search }) => {
+  const results = getCatalog().index.filter(({ row, category }) => {
     if (filters.prov !== "" && row[5] !== Number(filters.prov)) return false;
     if (filters.city !== "" && row[4] !== Number(filters.city)) return false;
     if (filters.cat && category !== filters.cat) return false;
@@ -101,8 +103,14 @@ export function searchJobs(filters: Filters, savedIds: string[] = []): SearchRes
     if (filters.disability && !row[12]) return false;
     if (filters.minQuota && row[6] < Number(filters.minQuota)) return false;
     if (filters.saved && !saved.has(row[0])) return false;
-    return terms.every(term => search.includes(term));
+    return true;
+  }).flatMap(indexed => {
+    const rank = rankSearch(indexed.search, query);
+    return rank ? [{ ...indexed, rank }] : [];
   });
+  // Explicit sorting stays authoritative; relevance is the default for searches.
+  // Stable sorting retains portal order when relevance ranks are equal.
+  if (filters.sort === "relevance" && query.active) results.sort((a, b) => b.rank[0] - a.rank[0] || b.rank[1] - a.rank[1]);
   if (filters.sort === "quota") results.sort((a, b) => b.row[6] - a.row[6]);
   if (filters.sort === "appl") results.sort((a, b) => a.row[7] - b.row[7]);
   if (filters.sort === "score") results.sort((a, b) => b.row[15] - a.row[15]);
