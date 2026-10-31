@@ -5,6 +5,7 @@ export function openApiDocument() {
   const errorResponses = Object.fromEntries([400, 404, 429, 503].map(status => [status, { description: ({ 400: "Parameter tidak valid", 404: "Lowongan tidak ditemukan", 429: "Rate limit, lihat Retry-After", 503: "Katalog/database tidak tersedia" })[status as 400], content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } } }]));
   const metadata = { type: "object", required: ["snapshotId", "snapshotDate", "isLive", "sourceUrl", "categoryVersion", "categorySource"], properties: {
     snapshotId: { type: "string" }, snapshotDate: { type: "string", format: "date" }, isLive: { type: "boolean", const: false }, sourceUrl: { type: "string", format: "uri" },
+    dataMode: { type: "string", enum: ["snapshot", "incremental"] }, lastIngestedAt: { type: ["string", "null"], format: "date-time", description: "Waktu batch terakhir diterima; bukan jaminan semua lowongan diperbarui pada waktu ini." }, revision: { type: "integer" },
     categoryVersion: { type: "integer" }, categorySource: { type: "string", const: "inferred_from_position_title", description: "Bidang diperkirakan dari judul posisi; bukan klasifikasi resmi penyelenggara." },
     requestedMode: { type: "string", enum: ["hybrid", "keyword"] }, mode: { type: "string", enum: ["hybrid", "keyword"] }, fallbackReason: { type: "string" },
     totalScope: { type: "string", enum: ["keyword_matches", "keyword_plus_semantic_candidates"] }, semanticCandidateLimit: { type: "integer" },
@@ -16,6 +17,7 @@ export function openApiDocument() {
     days: { type: "integer" }, disability: { type: "boolean" }, category: { type: "string" }, opportunityScore: { type: "number", description: "Skor peluang dari snapshot; bukan peluang diterima atau skor relevansi." },
     relevanceScore: { type: "number", description: "Skor ranking internal, bukan probabilitas." }, sourceUrl: { type: "string", format: "uri" }, detailUrl: { type: "string", format: "uri" },
     description: { type: ["string", "null"] }, descriptionAvailable: { type: "boolean" }, address: { type: "string" },
+    observedAt: { type: ["string", "null"], format: "date-time", description: "Waktu data lowongan diamati bot; null untuk data snapshot awal." },
   } };
   const option = { type: "object", required: ["value", "label"], properties: { value: { type: "string" }, label: { type: "string" }, count: { type: "integer" }, province: { type: "string" } } };
   const json = (schema: object) => ({ "application/json": { schema } });

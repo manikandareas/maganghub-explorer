@@ -13,11 +13,12 @@ import { pageJob } from "@/lib/server/page-data";
 import { formatNumber } from "@/lib/job-types";
 
 type Props = { params: Promise<{ id: string }> };
+const observedDate = (observedAt?: string | null) => observedAt ? new Date(observedAt).toLocaleDateString("id-ID", { dateStyle: "long", timeZone: "Asia/Jakarta" }) : "31 Oktober 2026";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const job = await pageJob((await params).id);
   if (!job) notFound();
-  return { title: `${job.title} — ${job.organization}`, description: `Lowongan magang ${job.title} di ${job.organization}, ${job.city}. Kuota ${job.quota} peserta. Snapshot 31 Oktober 2026.`, alternates: { canonical: `/lowongan/${job.id}` } };
+  return { title: `${job.title} — ${job.organization}`, description: `Lowongan magang ${job.title} di ${job.organization}, ${job.city}. Kuota ${job.quota} peserta. Data diambil ${observedDate(job.observedAt)}.`, alternates: { canonical: `/lowongan/${job.id}` } };
 }
 
 export default async function JobPage({ params }: Props) {
@@ -44,7 +45,7 @@ export default async function JobPage({ params }: Props) {
     </article>
     <aside className="detail-sidebar" aria-label="Ringkasan lowongan"><h2>Ringkasan lowongan</h2><dl className="detail-facts">{facts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
       <Button asChild className="apply-button"><a href={job.url} target="_blank" rel="noopener noreferrer">Lamar di portal resmi<ArrowTopRightIcon /></a></Button><SaveButton id={job.id} title={job.title} expanded />
-      <p className="detail-sidebar-note">Data 31 Oktober 2026. Batas pelamaran pada snapshot: <strong>4 November 2026</strong>. Cek ketersediaan di portal resmi.</p>
+      <p className="detail-sidebar-note">Data diambil {observedDate(job.observedAt)}. Batas pelamaran pada snapshot awal: <strong>4 November 2026</strong>. Cek ketersediaan di portal resmi.</p>
       <div className="detail-share"><ShareButton /></div>
     </aside></div>
     <div className="mobile-apply-bar"><SaveButton id={job.id} title={job.title} /><Button asChild><a href={job.url} target="_blank" rel="noopener noreferrer">Lamar di portal resmi<ArrowTopRightIcon /></a></Button></div>

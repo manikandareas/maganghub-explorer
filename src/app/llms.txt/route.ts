@@ -8,6 +8,8 @@ export function GET() {
 
 Data snapshot: 2026-10-31. This is not the official Kemnaker website or live vacancy data. The snapshot application deadline is 2026-11-04. Verify availability at the official source before advising someone to apply. Missing descriptions are null; do not invent requirements. Online interview does not imply remote/WFH work.
 
+The initial snapshot can receive incremental bot updates. Check meta.dataMode, meta.revision and meta.lastIngestedAt. lastIngestedAt is the time the most recent batch was committed, not a guarantee that all jobs were refreshed. Each job's observedAt records when its data was observed; null means the initial snapshot. Cite observedAt when available, otherwise snapshotDate. Reads are not cached by this API.
+
 ## API
 - [API guide](${origin}/api-docs): Parameters, examples, pagination, and limitations.
 - [OpenAPI schema](${origin}/openapi.json): Machine-readable API contract, no authentication required.

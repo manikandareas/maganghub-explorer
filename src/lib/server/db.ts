@@ -12,3 +12,9 @@ export async function query<T>(text: string, parameters: unknown[] = []): Promis
   // A fresh timeout is required for every request, including long backfills.
   return await database().query(text, parameters, { fetchOptions: { signal: AbortSignal.timeout(20000) } }) as T[];
 }
+
+export type Statement = { text: string; parameters: unknown[] };
+export async function transaction(statements: Statement[]): Promise<unknown[][]> {
+  const sql = database();
+  return sql.transaction(statements.map(statement => sql.query(statement.text, statement.parameters)), { fetchOptions: { signal: AbortSignal.timeout(45000) } });
+}

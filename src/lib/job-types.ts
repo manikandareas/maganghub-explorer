@@ -48,6 +48,7 @@ export type Job = {
   category: Category;
   score: number;
   url: string;
+  observedAt?: string | null;
 };
 
 export type JobDetail = Job & { description: string; address: string };
@@ -59,7 +60,7 @@ export type Facets = {
   categories: Option[];
   organizations: number;
 };
-export type SearchResult = { jobs: Job[]; total: number; page: number; pages: number; pageSize: number; meta?: { mode: "hybrid" | "keyword"; fallbackReason?: string } };
+export type SearchResult = { jobs: Job[]; total: number; page: number; pages: number; pageSize: number; meta?: { mode: "hybrid" | "keyword"; fallbackReason?: string; lastIngestedAt?: string | null } };
 
 export function parseFilters(params: URLSearchParams): Filters {
   const integer = (key: string, max = 99999) => {
@@ -70,7 +71,7 @@ export function parseFilters(params: URLSearchParams): Filters {
   return {
     q: (params.get("q") ?? "").slice(0, 250),
     cat: oneOf("cat", CATEGORIES.map(c => c.value)),
-    prov: integer("prov", 37), city: integer("city", 459),
+    prov: integer("prov", 2147483647), city: integer("city", 2147483647),
     org: oneOf("org", ["0", "1"]), edu: oneOf("edu", ["1", "2", "4"]),
     interview: oneOf("interview", ["1", "2"]),
     minQuota: integer("minQuota", 1000000),

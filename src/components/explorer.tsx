@@ -48,6 +48,8 @@ export function Explorer({ facets, initialFilters, initialResult }: { facets: Fa
     fallback: { [`/api/jobs?${initialParams}`]: initialResult }, revalidateOnFocus: false,
   });
   const data = result ?? initialResult;
+  const lastIngestedAt = data.meta?.lastIngestedAt;
+  const dataDate = lastIngestedAt ? new Date(lastIngestedAt).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Jakarta" }) : "31 Okt 2026";
   const pending = filters.q !== query || !result;
   const loading = isValidating || pending;
 
@@ -99,8 +101,8 @@ export function Explorer({ facets, initialFilters, initialResult }: { facets: Fa
         <div className="hero-heading-row"><div>
           <h1>Cari lowongan magang</h1>
           <p className="hero-description">Program Magang Nasional · Batch 3, 2026</p>
-        </div><Popover><PopoverTrigger asChild><Button variant="ghost" className="data-info">Data 31 Okt 2026<InfoCircledIcon /></Button></PopoverTrigger>
-          <PopoverContent align="end" className="text-xs leading-relaxed">Data tersimpan per 31 Oktober 2026. Kuota dan pelamar dapat berubah. Batas pelamaran pada snapshot: 4 November 2026. Cek ketersediaan di portal resmi.</PopoverContent>
+        </div><Popover><PopoverTrigger asChild><Button variant="ghost" className="data-info">Data {dataDate}<InfoCircledIcon /></Button></PopoverTrigger>
+          <PopoverContent align="end" className="text-xs leading-relaxed">{lastIngestedAt ? "Tanggal ini adalah pembaruan batch terakhir. Sebagian lowongan masih memakai snapshot awal 31 Oktober 2026. " : "Data tersimpan per 31 Oktober 2026. "}Kuota dan pelamar dapat berubah. Batas pelamaran pada snapshot awal: 4 November 2026. Cek ketersediaan di portal resmi.</PopoverContent>
         </Popover></div>
         <div className="hero-agent-action"><CopyForAgentButton /></div>
         <form className="search-form" role="search" onSubmit={event => { event.preventDefault(); searchRef.current?.blur(); resultsRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }); }}>

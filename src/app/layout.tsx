@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   alternates: { canonical: "/" },
   title: { default: "MagangHub Explorer — Temukan awal kariermu", template: "%s | MagangHub Explorer" },
-  description: "Jelajahi 27.667 lowongan Program Magang Nasional. Cari berdasarkan posisi, lokasi, pendidikan, dan minat. Data snapshot 31 Oktober 2026.",
+  description: "Jelajahi lowongan Program Magang Nasional. Cari berdasarkan posisi, lokasi, pendidikan, dan minat. Periksa waktu pembaruan dan sumber resmi pada detail lowongan.",
   applicationName: "MagangHub Explorer",
 };
 

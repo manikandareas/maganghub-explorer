@@ -3,25 +3,25 @@ import { query } from "./db";
 import { ServiceError } from "./errors";
 import { EMBEDDING_DIMENSIONS, EMBEDDING_MODEL, EMBEDDING_TEXT_VERSION, SOURCE_URL } from "./config";
 
-export type CatalogInfo = { id: string; snapshotDate: string; facets: Facets; expectedCount: number; status: string; categoryVersion: number };
+export type CatalogInfo = { id: string; snapshotDate: string; facets: Facets; expectedCount: number; status: string; categoryVersion: number; ingestRevision: number; lastIngestedAt: string | null };
 
-export async function getCatalogInfo(id?: string): Promise<CatalogInfo> {
-  const [row] = await query<CatalogInfo>(`SELECT s.id,to_char(s.snapshot_date,'YYYY-MM-DD') AS "snapshotDate",s.facets,s.expected_count AS "expectedCount",s.status,s.taxonomy_version AS "categoryVersion"
+export async function getCatalogInfo(id?: string, execute = query): Promise<CatalogInfo> {
+  const [row] = await execute<CatalogInfo>(`SELECT s.id,to_char(s.snapshot_date,'YYYY-MM-DD') AS "snapshotDate",s.facets,s.expected_count AS "expectedCount",s.status,s.taxonomy_version AS "categoryVersion",s.ingest_revision AS "ingestRevision",s.last_ingested_at AS "lastIngestedAt"
     FROM mh_snapshots s ${id ? "" : "JOIN mh_active_catalog a ON a.snapshot_id=s.id"}
     WHERE ${id ? "s.id=$1" : "a.singleton=true AND s.status='ready'"} AND s.embedding_model=$${id ? 2 : 1} AND s.embedding_dimensions=$${id ? 3 : 2} AND s.embedding_text_version=$${id ? 4 : 3}`, id ? [id, EMBEDDING_MODEL, EMBEDDING_DIMENSIONS, EMBEDDING_TEXT_VERSION] : [EMBEDDING_MODEL, EMBEDDING_DIMENSIONS, EMBEDDING_TEXT_VERSION]);
   if (!row) throw new ServiceError("CATALOG_NOT_READY", "Katalog belum siap. Jalankan import dan backfill terlebih dahulu.");
   return row;
 }
 
-export async function findJob(id: string, catalog?: CatalogInfo): Promise<JobDetail | null> {
+export async function findJob(id: string, catalog?: CatalogInfo, execute = query): Promise<JobDetail | null> {
   if (!/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/i.test(id)) return null;
-  const info = catalog ?? await getCatalogInfo();
-  const [row] = await query<{ payload: JobDetail }>("SELECT payload FROM mh_jobs WHERE snapshot_id=$1 AND id=$2::uuid", [info.id, id]);
+  const info = catalog ?? await getCatalogInfo(undefined, execute);
+  const [row] = await execute<{ payload: JobDetail }>("SELECT payload || jsonb_build_object('observedAt',observed_at) AS payload FROM mh_jobs WHERE snapshot_id=$1 AND id=$2::uuid", [info.id, id]);
   return row?.payload ?? null;
 }
 
 export function dataMetadata(info: CatalogInfo) {
-  return { snapshotId: info.id, snapshotDate: info.snapshotDate, isLive: false, sourceUrl: SOURCE_URL, categoryVersion: info.categoryVersion, categorySource: "inferred_from_position_title" as const };
+  return { snapshotId: info.id, snapshotDate: info.snapshotDate, isLive: false, dataMode: info.lastIngestedAt ? "incremental" as const : "snapshot" as const, lastIngestedAt: info.lastIngestedAt, revision: info.ingestRevision, sourceUrl: SOURCE_URL, categoryVersion: info.categoryVersion, categorySource: "inferred_from_position_title" as const };
 }
 
 export async function activateCatalog(id: string) {

@@ -11,8 +11,8 @@ export type SearchMode = "hybrid" | "keyword";
 export type EngineResult = SearchResult & { meta: ReturnType<typeof dataMetadata> & { requestedMode: SearchMode; mode: SearchMode; fallbackReason?: string; totalScope: string; semanticCandidateLimit: number } };
 export type SearchOptions = { catalog?: CatalogInfo; mode?: SearchMode; limit?: number; savedIds?: string[]; identity?: string; vector?: string; threshold?: number };
 
-export async function searchCatalog(filters: Filters, options: SearchOptions = {}): Promise<EngineResult> {
-  const catalog = options.catalog ?? await getCatalogInfo();
+export async function searchCatalog(filters: Filters, options: SearchOptions = {}, execute = query): Promise<EngineResult> {
+  const catalog = options.catalog ?? await getCatalogInfo(undefined, execute);
   const mode = options.mode ?? "hybrid";
   const limit = Math.max(1, Math.min(50, options.limit ?? 12));
   const normalized = normalizeSearchText(filters.q);
@@ -48,7 +48,7 @@ export async function searchCatalog(filters: Filters, options: SearchOptions = {
   const sorting: Record<Filters["sort"], string> = { relevance: normalized ? relevance : "j.portal_order", portal: "j.portal_order", quota: "j.quota DESC", appl: "j.applicants", score: "j.opportunity_score DESC", az: "j.az_order" };
   const pageSize = bind(limit);
   const requestedPage = bind(filters.page);
-  const [row] = await query<{ result: SearchResult }>(`WITH
+  const [row] = await execute<{ result: SearchResult }>(`WITH
     filtered AS NOT MATERIALIZED (SELECT j.* FROM mh_jobs j WHERE ${conditions.join(" AND ")}),
     lexical_scores AS (SELECT j.id,j.portal_order,${titleTier} AS title_tier,${fieldScore} AS field_score FROM filtered j WHERE ${lexicalCondition}),
     lexical AS (SELECT *,row_number() OVER(ORDER BY title_tier DESC,field_score DESC,portal_order,id) AS keyword_rank FROM lexical_scores),
@@ -57,7 +57,7 @@ export async function searchCatalog(filters: Filters, options: SearchOptions = {
       coalesce(1.0/(60+l.keyword_rank),0)+coalesce(0.8/(60+s.semantic_rank),0) AS relevance FROM lexical l FULL JOIN semantic s ON l.id=s.id),
     page_info AS (SELECT count(*)::int AS total,greatest(1,ceil(count(*)::numeric/${pageSize})::int) AS pages,
       least(${requestedPage}::int,greatest(1,ceil(count(*)::numeric/${pageSize})::int)) AS page FROM combined),
-    page_rows AS (SELECT (j.payload-'description'-'address') || jsonb_build_object('relevanceScore',c.relevance) AS payload,
+    page_rows AS (SELECT (j.payload-'description'-'address') || jsonb_build_object('relevanceScore',c.relevance,'observedAt',j.observed_at) AS payload,
       row_number() OVER(ORDER BY ${sorting[filters.sort]},j.portal_order,j.id) AS position
       FROM combined c JOIN filtered j ON j.id=c.id ORDER BY ${sorting[filters.sort]},j.portal_order,j.id
       LIMIT ${pageSize} OFFSET (SELECT (page-1)*${pageSize} FROM page_info))

@@ -20,6 +20,8 @@ npm start
 
 Salin `.env.example` menjadi `.env` pada checkout baru, lalu isi `DATABASE_URL` Neon dan `OPENROUTER_API_KEY`. Kredensial hanya digunakan server. Set `SITE_URL` ke domain HTTPS produksi agar tautan canonical, sitemap, dan dokumentasi API benar. Jangan memakai prefix `NEXT_PUBLIC_` untuk secret.
 
+Untuk pembaruan otomatis dari bot, isi `INGEST_API_KEY` dengan secret minimal 32 karakter dan gunakan `POST /api/internal/jobs/ingest`. Server melakukan validasi, incremental upsert, dan embedding sebelum mengembalikan `ready: true`. Kontrak, batas batch, dan retry ada di [panduan integrasi bot](docs/bot-ingestion.md); [prompt penyesuaian bot](docs/prompts/update-ingestion-bot.md) siap disalin.
+
 Siapkan katalog sebelum membuka aplikasi:
 
 ```sh
@@ -75,7 +77,7 @@ Contoh: `/api/v1/jobs?q=mengolah%20data&education=sarjana&mode=hybrid&limit=12`.
 
 Parameter tambahan yang tidak dikenal diabaikan, termasuk `utm_*`, `ref`, serta parameter lain yang ditambahkan platform AI atau tautan berbagi. Nilai tambahan boleh berulang dan tidak mengubah filter, ranking, atau pagination. Parameter pencarian resmi yang tidak valid atau berulang tetap menghasilkan 400.
 
-`meta` selalu menyatakan tanggal snapshot, sumber, `isLive=false`, dan mode yang benar-benar digunakan. Jika provider gagal, mode keyword beserta `fallbackReason` dikembalikan. Query kosong atau hanya tanda baca tidak membuat embedding. Deskripsi yang tidak tersedia adalah `null` pada detail API. Skor peluang dipisahkan sebagai `opportunityScore`; skor relevansi bukan probabilitas.
+`meta` selalu menyatakan tanggal snapshot awal, sumber, `isLive=false`, dan mode yang benar-benar digunakan. Pembaruan bot menambahkan `dataMode=incremental`, `revision`, dan `lastIngestedAt`; setiap lowongan memiliki `observedAt` atau null untuk snapshot awal. Waktu batch terakhir bukan jaminan semua lowongan sudah diperbarui. Respons GET katalog tidak di-cache agar request sesudah ingest membaca data terbaru. Jika provider pencarian gagal, mode keyword beserta `fallbackReason` dikembalikan. Query kosong atau hanya tanda baca tidak membuat embedding. Deskripsi yang tidak tersedia adalah `null` pada detail API. Skor peluang dipisahkan sebagai `opportunityScore`; skor relevansi bukan probabilitas.
 
 Dalam mode hybrid, `total` menghitung union seluruh kecocokan keyword dan maksimal 200 kandidat semantic yang melewati threshold. Semua filter diterapkan sebelum retrieval. Sort dan pagination diterapkan setelah deduplikasi, dengan tie-break stabil. `totalScope` menjelaskan bahwa ini bukan hitungan seluruh kemungkinan kecocokan semantic.
 

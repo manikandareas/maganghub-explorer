@@ -27,7 +27,7 @@ before(async () => {
     vector[0] = index === 0 ? 0.8 : index === 1 ? 1 : 0;
     vector[1] = index === 0 ? 0.6 : index === 2 ? 1 : 0;
     await query("INSERT INTO mh_embeddings(hash,model,dimensions,embedding) VALUES($1,'openai/text-embedding-3-small',512,$2::vector)", [fixtureHashes[index], JSON.stringify(vector)]);
-    await query(`INSERT INTO mh_jobs SELECT $1,id,portal_order,az_order,payload,province_code,city_code,category,organization_type,education_mask,interview_mask,disability,quota,applicants,opportunity_score,search_fields,fts,embedding_text,$3 FROM mh_jobs WHERE snapshot_id=$2 AND id=$4::uuid`, [testSnapshot, catalog.id, fixtureHashes[index], fixtureIds[index]]);
+    await query(`INSERT INTO mh_jobs SELECT $1,id,portal_order,az_order,payload,province_code,city_code,category,organization_type,education_mask,interview_mask,disability,quota,applicants,opportunity_score,search_fields,fts,embedding_text,$3,observed_at FROM mh_jobs WHERE snapshot_id=$2 AND id=$4::uuid`, [testSnapshot, catalog.id, fixtureHashes[index], fixtureIds[index]]);
   }
 });
 after(async () => {

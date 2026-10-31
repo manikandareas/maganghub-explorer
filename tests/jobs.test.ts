@@ -122,8 +122,11 @@ test("bookmarks only return saved IDs and still respect active filters", () => {
 test("URL state roundtrips, preserves index zero, and rejects malformed parameters", () => {
   const filters = { ...DEFAULT_FILTERS, q: "data analyst", org: "0", prov: "0", city: "0", minQuota: "3", disability: true, sort: "quota" as const, page: 2 };
   assert.deepEqual(parseFilters(filterParams(filters)), filters);
-  const parsed = parseFilters(new URLSearchParams("prov=999&city=-1&edu=3&org=8&interview=x&minQuota=Infinity&page=NaN&sort=random&cat=unknown"));
+  const parsed = parseFilters(new URLSearchParams("prov=2147483648&city=-1&edu=3&org=8&interview=x&minQuota=Infinity&page=NaN&sort=random&cat=unknown"));
   assert.deepEqual(parsed, DEFAULT_FILTERS);
+  const extended = parseFilters(new URLSearchParams("prov=38&city=460"));
+  assert.equal(extended.prov, "38");
+  assert.equal(extended.city, "460");
 });
 
 test("details preserve original content, hide unresolved snapshot references, and link to the official portal", () => {

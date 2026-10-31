@@ -4,7 +4,7 @@ import { admitRequest, clientIdentity } from "./limits";
 export const corsHeaders = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Expose-Headers": "Retry-After, ETag", "X-Content-Type-Options": "nosniff" };
 export const optionsResponse = () => new Response(null, { status: 204, headers: corsHeaders });
 
-export async function apiResponse(request: Request, action: (identity: string) => Promise<unknown>, cache = true) {
+export async function apiResponse(request: Request, action: (identity: string) => Promise<unknown>, cache = false) {
   try {
     const identity = clientIdentity(request.headers);
     await admitRequest(identity);
